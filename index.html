@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TH Basunia — Founder Advisory & Accountancy Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:       #111111;
+  --ink:         #1e1e1e;
+  --dark:        #1a1a1a;
+  --dark-card:   #2a2a2a;
+  --paper-warm:  #ede9df;
+  --cream:       #f0ede4;
+  --slate:       #2d3f52;
+  --slate-light: #3a4f65;
+  --rust:        #c4522a;
+  --rust-dark:   #a8401e;
+  --white:       #ffffff;
+  --text-muted:  #7a7a7a;
+  --text-mid:    #555555;
+  --serif:       'Playfair Display', Georgia, serif;
+  --serif-alt:   'Cormorant Garamond', serif;
+  --sans:        'Montserrat', sans-serif;
+  --px:          clamp(1.25rem, 5vw, 3rem);
+  --py:          clamp(3.5rem, 8vw, 6rem);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); font-size: 15px; line-height: 1.6; color: var(--black); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--black);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem;
+  padding: 0.5rem var(--px); min-height: 68px;
+  border-bottom: 1px solid #2a2a2a;
+}
+.nav-logo { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--white); text-decoration: none; flex-shrink: 0; }
+.nav-logo em { font-style: italic; color: var(--rust); font-weight: 400; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; list-style: none; }
+.nav-links a { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #aaa; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-ctas { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.btn-nav { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.5rem 1rem; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; }
+.btn-nav:hover { opacity: 0.82; }
+.btn-advisory    { background: var(--rust);  color: var(--white); }
+.btn-accountancy { background: var(--slate); color: var(--white); }
+
+/* HERO */
+.hero {
+  background: var(--black);
+  padding: clamp(2rem,5vw,3rem) var(--px) clamp(2.5rem,6vw,4rem);
+  position: relative; overflow: hidden;
+  min-height: clamp(360px,55vw,520px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.hero-watermark {
+  position: absolute; right: -2rem; top: 50%; transform: translateY(-55%);
+  font-family: var(--serif); font-style: italic; font-size: clamp(5rem,18vw,14rem);
+  font-weight: 700; color: rgba(255,255,255,0.035);
+  pointer-events: none; white-space: nowrap; line-height: 1; user-select: none;
+}
+.hero-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem 1rem; margin-bottom: clamp(2rem,5vw,4rem); }
+.hero-eyebrow-line { width: 2rem; height: 1px; background: var(--rust); flex-shrink: 0; }
+.hero-eyebrow-text { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #888; }
+.hero-location { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #555; margin-left: auto; }
+.hero-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-end; }
+.hero-headline { flex: 1 1 300px; }
+.hero-headline h1 { font-family: var(--serif); font-size: clamp(2.2rem,6vw,4.2rem); font-weight: 700; line-height: 1.05; color: var(--white); }
+.hero-headline h1 em { font-style: italic; color: var(--rust); font-weight: 400; display: block; }
+.hero-subtext { margin-top: 1.4rem; font-size: 0.9rem; line-height: 1.75; color: #aaa; }
+.hero-cards { flex: 1 1 240px; display: flex; flex-wrap: wrap; gap: 0.4rem; align-self: flex-end; }
+.hero-card { flex: 1 1 110px; padding: 1rem 1.2rem; text-decoration: none; transition: opacity 0.2s; }
+.hero-card:hover { opacity: 0.85; }
+.hero-card-advisory    { background: var(--rust); }
+.hero-card-accountancy { background: var(--slate); }
+.hero-card-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--white); margin-bottom: 0.2rem; }
+.hero-card-sub   { font-size: 0.59rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+
+/* STATS */
+.stats { background: var(--paper-warm); display: flex; flex-wrap: wrap; }
+.stat { flex: 1 1 160px; padding: clamp(1.5rem,4vw,2.8rem) clamp(1.2rem,3vw,2.5rem); border-right: 1px solid #d4cfC4; border-bottom: 1px solid #d4cfC4; }
+.stat:nth-child(4) { border-right: none; }
+.stat-num   { font-family: var(--serif); font-size: clamp(2rem,5vw,3.2rem); font-weight: 400; color: var(--rust); line-height: 1; margin-bottom: 0.4rem; }
+.stat-label { font-size: 0.79rem; color: var(--text-muted); line-height: 1.4; }
+
+/* TICKER */
+.ticker { background: var(--black); overflow: hidden; padding: 0.85rem 0; white-space: nowrap; }
+.ticker-inner { display: inline-block; animation: ticker-scroll 38s linear infinite; }
+.ticker-inner span { font-size: 0.61rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin: 0 1.3rem; }
+.ticker-inner span::after { content: '•'; margin-left: 1.3rem; color: var(--rust); }
+@keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* SHARED */
+.section-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.3rem; }
+.eyebrow-line { width: 1.8rem; height: 1px; background: var(--rust); flex-shrink: 0; }
+.eyebrow-text { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); }
+.eyebrow-text.on-dark { color: rgba(255,255,255,0.45); }
+.division-badge { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.38rem 0.75rem; margin-bottom: 1.5rem; }
+.badge-advisory    { background: var(--rust);  color: var(--white); }
+.badge-accountancy { background: var(--slate); color: var(--white); }
+
+/* DIVISION 01 */
+.division-advisory { background: var(--paper-warm); padding: var(--py) var(--px); }
+.division-intro { display: flex; flex-wrap: wrap; gap: 2rem 4rem; align-items: flex-start; margin-bottom: clamp(3rem,6vw,5rem); }
+.division-intro > * { flex: 1 1 260px; }
+.division-headline { font-family: var(--serif); font-size: clamp(1.9rem,5vw,3.4rem); font-weight: 700; line-height: 1.08; color: var(--black); }
+.division-body { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; padding-top: 0.4rem; }
+
+/* WHO I WORK WITH */
+.who-section { padding: 0 0 clamp(3rem,6vw,6rem); }
+.who-headline { font-family: var(--serif); font-size: clamp(1.7rem,4.5vw,3.2rem); font-weight: 700; line-height: 1.1; color: var(--black); max-width: 680px; margin-bottom: 1rem; }
+.who-subtext  { font-size: 0.87rem; color: var(--text-muted); max-width: 540px; margin-bottom: 2.8rem; line-height: 1.75; }
+
+.who-grid { display: flex; flex-wrap: wrap; border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+.who-item {
+  flex: 1 1 280px;
+  padding: 2rem 1.8rem;
+  border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;
+  cursor: default;
+  transition: background 0.3s ease;
+}
+.who-item:hover { background: var(--ink); }
+.who-item:hover .who-item-title { color: var(--white); }
+.who-item:hover .who-item-body  { color: #bbb; }
+.who-item.dark { background: var(--paper-warm); }
+.who-item.dark:hover { background: var(--ink); }
+.who-item-num   { font-family: var(--serif-alt); font-style: italic; font-size: 1rem; color: var(--rust); margin-bottom: 0.55rem; }
+.who-item-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--black); margin-bottom: 0.55rem; line-height: 1.25; transition: color 0.3s; }
+.who-item-body  { font-size: 0.83rem; color: var(--text-muted); line-height: 1.72; transition: color 0.3s; }
+
+/* ENGAGEMENTS */
+.engagements { background: var(--dark); padding: var(--py) var(--px); }
+.engagement-grid { display: flex; flex-wrap: wrap; background: var(--dark-card); border-radius: 2px; overflow: hidden; margin-top: 2.5rem; }
+.engagement-item { flex: 1 1 240px; padding: clamp(1.8rem,4vw,3rem) clamp(1.4rem,3vw,2.5rem); border-right: 1px solid #333; border-bottom: 1px solid #333; }
+.engagement-item:last-child { border-right: none; }
+.engagement-tag   { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.8rem; }
+.engagement-title { font-family: var(--serif); font-size: clamp(1.4rem,3vw,2rem); font-weight: 700; color: var(--white); margin-bottom: 0.3rem; line-height: 1.1; }
+.engagement-meta  { font-size: 0.72rem; color: #777; margin-bottom: 1rem; }
+.engagement-body  { font-size: 0.83rem; color: #aaa; line-height: 1.78; }
+
+/* SERVICE LINES */
+.service-lines { background: var(--paper-warm); padding: var(--py) var(--px); }
+.service-headline { font-family: var(--serif); font-size: clamp(1.9rem,5vw,3.2rem); font-weight: 700; color: var(--black); margin-bottom: 0.4rem; }
+.service-subtext  { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 2.8rem; }
+.service-grid { display: flex; flex-wrap: wrap; border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+.service-col  { flex: 1 1 240px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 2rem 1.8rem 1.8rem; display: flex; flex-direction: column; }
+.service-tag   { font-size: 0.57rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.65rem; }
+.service-title { font-family: var(--serif); font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 700; color: var(--black); margin-bottom: 0.4rem; line-height: 1.1; }
+.service-quote { font-family: var(--serif-alt); font-style: italic; font-size: 0.89rem; color: var(--text-muted); margin-bottom: 1.3rem; line-height: 1.5; }
+.service-list  { list-style: none; margin-bottom: 1.3rem; flex: 1; }
+.service-list li { font-size: 0.8rem; color: var(--text-mid); padding: 0.3rem 0 0.3rem 1.2rem; position: relative; line-height: 1.4; border-bottom: 1px solid #ddd9cf; }
+.service-list li::before { content: '–'; position: absolute; left: 0; color: var(--rust); }
+.service-best { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; padding-top: 0.9rem; border-top: 1px solid #ddd; margin-top: auto; }
+
+/* ABOUT */
+.about-section { background: var(--black); padding: var(--py) var(--px); display: flex; flex-wrap: wrap; gap: 3rem 5rem; }
+.about-section > * { flex: 1 1 280px; }
+.about-headline { font-family: var(--serif); font-size: clamp(1.9rem,5vw,3rem); font-weight: 700; color: var(--white); margin-bottom: 1.3rem; line-height: 1.1; }
+.about-body { font-size: 0.86rem; color: #b0b0b0; line-height: 1.88; margin-bottom: 1rem; }
+.about-signature { margin-top: 1.8rem; padding-top: 1.3rem; border-top: 1px solid #333; }
+.about-name { font-family: var(--serif-alt); font-style: italic; font-size: 1.25rem; color: var(--white); margin-bottom: 0.2rem; }
+.about-role { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rust); }
+.about-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 0.5rem; min-width: 220px; }
+.photo-placeholder { background: #1e1e1e; border: 1px solid #2e2e2e; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; cursor: pointer; transition: border-color 0.22s; min-height: 150px; }
+.photo-placeholder:hover { border-color: var(--rust); }
+.photo-plus  { font-size: 1.3rem; color: var(--rust); }
+.photo-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #555; text-align: center; padding: 0 0.7rem; line-height: 1.4; }
+.photo-caption-bar { background: #1a1a1a; border: 1px solid #2e2e2e; padding: 0.45rem; font-size: 0.59rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #555; text-align: center; }
+.photo-tall  { grid-column: 1; grid-row: 1 / 3; }
+.photo-wide  { grid-column: 1 / -1; min-height: 120px; }
+.photo-right-col { display: flex; flex-direction: column; gap: 0.5rem; }
+
+/* TESTIMONIAL */
+.testimonial { background: var(--rust); padding: clamp(3.5rem,8vw,6rem) var(--px); text-align: center; }
+.testimonial-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem,3.5vw,1.9rem); font-weight: 400; color: var(--white); line-height: 1.48; max-width: 840px; margin: 0 auto 2rem; }
+.testimonial-attr  { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+
+/* DIVISION DIVIDER */
+.division-divider { background: var(--paper-warm); padding: 2rem var(--px); text-align: center; border-top: 1px solid #d0ccc3; border-bottom: 1px solid #d0ccc3; }
+.division-divider-text { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #bbb; }
+
+/* ACCOUNTANCY INTRO */
+.accountancy-intro { background: var(--paper-warm); padding: clamp(3rem,7vw,5rem) var(--px); display: flex; flex-wrap: wrap; gap: 2rem 4rem; align-items: center; border-bottom: 1px solid #d0ccc3; }
+.accountancy-intro > * { flex: 1 1 240px; }
+.accountancy-headline { font-family: var(--serif); font-size: clamp(1.9rem,5vw,3rem); font-weight: 700; line-height: 1.1; color: var(--black); }
+.accountancy-body { font-size: 0.87rem; color: var(--text-muted); line-height: 1.78; }
+
+/* WHAT WE OFFER */
+.services-section { background: var(--paper-warm); padding: var(--py) var(--px); }
+.services-headline { font-family: var(--serif); font-size: clamp(1.7rem,4.5vw,2.8rem); font-weight: 700; color: var(--black); margin-bottom: 0.4rem; }
+.services-subtext  { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 2.8rem; }
+
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+.service-item {
+  padding: 2rem 1.6rem;
+  border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;
+  cursor: default;
+  transition: background 0.3s ease;
+}
+/* hover → slate */
+.service-item:hover { background: var(--slate); }
+.service-item:hover .service-name { color: var(--white); }
+.service-item:hover .service-desc { color: rgba(255,255,255,0.68); }
+.service-item:hover .service-icon { filter: grayscale(1) brightness(2.5); }
+
+.service-icon { font-size: 1.65rem; display: block; margin-bottom: 0.85rem; transition: filter 0.3s; }
+.service-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--black); margin-bottom: 0.4rem; transition: color 0.3s; }
+.service-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.68; transition: color 0.3s; }
+
+/* WHY */
+.why-section { background: var(--slate); padding: var(--py) var(--px); }
+.why-headline { font-family: var(--serif); font-size: clamp(1.7rem,4.5vw,2.8rem); font-weight: 700; color: var(--white); margin-bottom: 2.8rem; }
+.why-grid { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.why-card { flex: 1 1 200px; border: 1px solid rgba(255,255,255,0.1); padding: 2rem; }
+.why-num   { font-family: var(--serif); font-size: 2.3rem; font-weight: 700; color: rgba(255,255,255,0.1); margin-bottom: 0.8rem; line-height: 1; }
+.why-title { font-size: 0.93rem; font-weight: 600; color: var(--white); margin-bottom: 0.55rem; }
+.why-body  { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.72; }
+
+/* CONTACT */
+.contact { background: var(--black); display: flex; flex-wrap: wrap; border-top: 1px solid #222; }
+.contact-side { flex: 1 1 260px; padding: clamp(2.8rem,6vw,5rem) var(--px); border-right: 1px solid #222; border-bottom: 1px solid #222; }
+.contact-side:last-child { border-right: none; }
+.contact-headline { font-family: var(--serif); font-size: clamp(1.5rem,4vw,2.4rem); font-weight: 700; color: var(--white); margin-bottom: 0.85rem; line-height: 1.15; }
+.contact-body  { font-size: 0.83rem; color: #888; line-height: 1.78; margin-bottom: 1.6rem; }
+.contact-details { margin-bottom: 1.8rem; }
+.contact-row   { display: flex; gap: 1.2rem; font-size: 0.76rem; margin-bottom: 0.4rem; }
+.contact-label { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #555; width: 56px; flex-shrink: 0; }
+.contact-value { color: #ccc; }
+.contact-btn { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.85rem 1.5rem; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; }
+.contact-btn:hover { opacity: 0.82; }
+.contact-btn-advisory    { background: var(--rust);  color: var(--white); }
+.contact-btn-accountancy { background: var(--slate); color: var(--white); }
+
+/* FOOTER */
+footer { background: var(--black); border-top: 1px solid #1e1e1e; padding: 1.6rem var(--px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.7rem; }
+.footer-logo { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--white); }
+.footer-logo em { font-style: italic; color: var(--rust); font-weight: 400; }
+.footer-copy  { font-size: 0.69rem; color: #555; letter-spacing: 0.04em; }
+.footer-legal { font-size: 0.69rem; color: #444; letter-spacing: 0.03em; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* MOBILE ≤ 600px */
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero-location { display: none; }
+  .stat { flex: 1 1 45%; }
+  .stat:nth-child(4) { border-right: 1px solid #d4cfC4; }
+  .who-item, .service-col, .engagement-item { flex: 1 1 100%; }
+  .engagement-item { border-right: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .about-photos { grid-template-columns: 1fr; }
+  .photo-tall { grid-column: auto; grid-row: auto; }
+  .photo-wide { grid-column: auto; }
+  .contact-side { flex: 1 1 100%; border-right: none; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* TABLET 601–900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .who-item, .service-col { flex: 1 1 48%; }
+  .engagement-item { flex: 1 1 48%; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-side { flex: 1 1 100%; border-right: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">TH <em>Basunia</em></a>
+  <ul class="nav-links">
+    <li><a href="#advisory">Founder Advisory</a></li>
+    <li><a href="#accountancy">Accountancy</a></li>
+    <li><a href="#about">About Taz</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="#advisory"    class="btn-nav btn-advisory">Advisory</a>
+    <a href="#accountancy" class="btn-nav btn-accountancy">Accountancy</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-watermark">Basunia</div>
+  <div class="hero-eyebrow">
+    <div class="hero-eyebrow-line"></div>
+    <span class="hero-eyebrow-text">Two businesses. One trusted name.</span>
+    <span class="hero-location">London &middot; United Kingdom</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-headline">
+      <h1>Built from the inside.<em>Trusted from experience.</em></h1>
+      <p class="hero-subtext">Founder-to-founder advisory for FMCG and consumer brand builders. Plus practical, no-nonsense accountancy for growing businesses. Both from someone who's actually been there.</p>
+    </div>
+    <div class="hero-cards">
+      <a href="#advisory" class="hero-card hero-card-advisory">
+        <div class="hero-card-label">Founder Advisory</div>
+        <div class="hero-card-sub">Commercial &middot; Financial &middot; Operational</div>
+      </a>
+      <a href="#accountancy" class="hero-card hero-card-accountancy">
+        <div class="hero-card-label">Accountancy Services</div>
+        <div class="hero-card-sub">Tax &middot; Payroll &middot; Bookkeeping &middot; Accounts</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal"><div class="stat-num">14</div><div class="stat-label">Years founding &amp; running a consumer brand</div></div>
+  <div class="stat reveal"><div class="stat-num">8+</div><div class="stat-label">International markets entered</div></div>
+  <div class="stat reveal"><div class="stat-num">15+</div><div class="stat-label">Premium &amp; grocery retailers landed</div></div>
+  <div class="stat reveal"><div class="stat-num">FCA</div><div class="stat-label">Fellow Chartered Accountant &middot; PwC trained</div></div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Holland &amp; Barrett</span><span>Hong Kong</span><span>Singapore</span><span>Japan</span><span>Saudi Arabia</span><span>Selfridges</span><span>Harrods</span><span>Whole Foods</span><span>Harvey Nichols</span><span>Asda</span><span>Holland &amp; Barrett</span><span>Hong Kong</span><span>Singapore</span><span>Japan</span><span>Saudi Arabia</span><span>Selfridges</span><span>Harrods</span><span>Whole Foods</span><span>Harvey Nichols</span><span>Asda</span>
+  </div>
+</div>
+
+<!-- DIVISION 01 – FOUNDER ADVISORY -->
+<section id="advisory" class="division-advisory">
+  <div class="division-badge badge-advisory">Division 01 – Founder Advisory</div>
+  <div class="division-intro">
+    <div class="reveal">
+      <h2 class="division-headline">I've built it, broken it, scaled it &amp; sold it. Now I help you do it.</h2>
+    </div>
+    <div class="reveal">
+      <p class="division-body">Interim and fractional support for FMCG and consumer brand founders, sub-£5m revenue. Commercial, financial, and operational expertise from someone who's actually lived the journey.</p>
+    </div>
+  </div>
+
+  <!-- WHO I WORK WITH -->
+  <div class="who-section">
+    <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><span class="eyebrow-text">Who I work with</span></div>
+    <h3 class="who-headline reveal">For founders who've raised the money. Now they have to make it work.</h3>
+    <p class="who-subtext reveal">The £500k–£5m revenue band is where most consumer brands either find their stride or quietly run out of road. The gap between "promising brand" and "real business" is paved with decisions founders are rarely equipped to make alone.</p>
+    <div class="who-grid reveal">
+      <div class="who-item">
+        <div class="who-item-num">i.</div>
+        <h4 class="who-item-title">You've landed your first big retailer</h4>
+        <p class="who-item-body">Selfridges, Whole Foods, Holland &amp; Barrett – you got the listing. Now you need to keep it, expand it, and not get crushed by margin compression and slotting fees.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-item-num">ii.</div>
+        <h4 class="who-item-title">Cash is tight but ambition is bigger</h4>
+        <p class="who-item-body">You've raised an angel round, perhaps a seed. The runway is real but finite. Working capital, gross margin, factory MOQs and DTC vs grocery economics need somebody who's solved them before.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-item-num">iii.</div>
+        <h4 class="who-item-title">International is calling — and confusing</h4>
+        <p class="who-item-body">Distributors are pitching, foreign retailers want listings, the export grants exist. But every market has its own rules, and the wrong first move overseas can sink a UK business. I've made the mistakes so you don't have to.</p>
+      </div>
+      <div class="who-item">
+        <div class="who-item-num">iv.</div>
+        <h4 class="who-item-title">You're scaling — but not professionalising</h4>
+        <p class="who-item-body">You're still the brand, the buyer, the bookkeeper, the recruiter. The team's growing but the operating model isn't. You need someone who can sit alongside you for 1–2 days a week and quietly install the rails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK TOGETHER -->
+<section class="engagements">
+  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><span class="eyebrow-text">How we work together</span></div>
+  <div class="engagement-grid">
+    <div class="engagement-item reveal">
+      <div class="engagement-tag">Engagement 01</div>
+      <h3 class="engagement-title">Corporate Advisory</h3>
+      <div class="engagement-meta">Quarterly &middot; Equity-led arrangement</div>
+      <p class="engagement-body">A board-level seat and ongoing strategic input. Monthly calls, board attendance, and an open line when you hit a wall. For founders who need wisdom alongside the right structure. Equity-only or hybrid arrangements considered.</p>
+    </div>
+    <div class="engagement-item reveal">
+      <div class="engagement-tag">Engagement 02</div>
+      <h3 class="engagement-title">Fractional</h3>
+      <div class="engagement-meta">1–2 days per week &middot; 6+ months &middot; Monthly retainer</div>
+      <p class="engagement-body">A standing seat at your table. I become the commercial, financial or operational voice you don't yet have on payroll – building the function, hiring its eventual owner, then handing it over cleanly.</p>
+    </div>
+    <div class="engagement-item reveal">
+      <div class="engagement-tag">Engagement 03</div>
+      <h3 class="engagement-title">Sprint</h3>
+      <div class="engagement-meta">2–6 weeks &middot; Day-rate &middot; Defined deliverable</div>
+      <p class="engagement-body">A defined problem with a defined outcome. Buyer pitch prep, an investor deck, a margin diagnostic, a market entry plan. Ideal when you know what needs fixing and need it done properly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE LINES -->
+<section class="service-lines">
+  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><span class="eyebrow-text">Three service lines</span></div>
+  <h2 class="service-headline reveal">Three places founders get stuck.</h2>
+  <p class="service-subtext reveal">Engage one line, two, or all three – as a sprint or ongoing.</p>
+  <div class="service-grid reveal">
+    <div class="service-col">
+      <div class="service-tag">Service Line 01</div>
+      <h3 class="service-title">Commercial</h3>
+      <p class="service-quote">"How do we sell more, in the right places, at the right margin?"</p>
+      <ul class="service-list">
+        <li>Retailer strategy &amp; buyer-room preparation</li>
+        <li>Range architecture &amp; SKU rationalisation</li>
+        <li>Pricing, promotion &amp; trade investment</li>
+        <li>National Account Manager hire &amp; coaching</li>
+        <li>International market entry – Europe, Asia, GCC, North America</li>
+        <li>Distributor selection, contracting &amp; oversight</li>
+      </ul>
+      <div class="service-best">Best for: First major listings &amp; international launches</div>
+    </div>
+    <div class="service-col">
+      <div class="service-tag">Service Line 02</div>
+      <h3 class="service-title">Financial</h3>
+      <p class="service-quote">"We're growing – so why is cash always tight?"</p>
+      <ul class="service-list">
+        <li>13-week cash flow modelling &amp; weekly disciplines</li>
+        <li>Gross margin diagnosis – channel, SKU and customer level</li>
+        <li>Working capital optimisation &amp; stock cycle</li>
+        <li>Funding strategy: angel, debt, asset-based lending, grants</li>
+        <li>Investor decks &amp; data room preparation</li>
+        <li>Board pack &amp; KPI design for early-stage businesses</li>
+      </ul>
+      <div class="service-best">Best for: Pre-fundraise &amp; cash crisis stabilisation</div>
+    </div>
+    <div class="service-col">
+      <div class="service-tag">Service Line 03</div>
+      <h3 class="service-title">Operational</h3>
+      <p class="service-quote">"The wheels are wobbling – how do we make this scalable?"</p>
+      <ul class="service-list">
+        <li>Co-manufacturer &amp; co-packer selection</li>
+        <li>Supply chain design – UK and international</li>
+        <li>3PL &amp; warehousing strategy across channels</li>
+        <li>Operating model design as the team grows past 10</li>
+        <li>Process &amp; system foundations (ERP, NPD, QC)</li>
+        <li>Contingency planning &amp; supplier risk</li>
+      </ul>
+      <div class="service-best">Best for: Scaling past the founder-led ceiling</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div>
+    <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><span class="eyebrow-text">The founder behind it</span></div>
+    <h2 class="about-headline reveal">I've sat in your chair.</h2>
+    <p class="about-body reveal">For fourteen years I co-founded and ran a premium plant-based confectionery brand – Jealous Sweets – from a London kitchen table to listings in Selfridges, Harrods, Harvey Nichols, Whole Foods, Holland &amp; Barrett and Asda, and into eight international markets across Asia, the Middle East and beyond.</p>
+    <p class="about-body reveal">I raised angel money. I negotiated bank facilities. I won a trademark fight against a much bigger company. I picked the wrong distributor and lived with the consequences. I made the gross margin call that worked and the one that didn't. I built a team, lost a co-founder, and ultimately worked through what every consumer brand founder fears most.</p>
+    <p class="about-body reveal">That's not a CV – that's a curriculum. And it's why I now work alongside founders facing the same decisions, from the inside, not from a deck. No theories. No frameworks borrowed from McKinsey. Just hard-won, founder-grade judgement, sat next to you for as long as you need it.</p>
+    <div class="about-signature reveal">
+      <div class="about-name">Tahzeen "Taz" Basunia</div>
+      <div class="about-role">Founder &middot; TH Basunia</div>
+    </div>
+  </div>
+  <div class="about-photos reveal">
+    <div class="photo-placeholder photo-tall">
+      <div class="photo-plus">＋</div>
+      <div class="photo-label">Add photo of Taz<br><span style="color:#333">Headshot / portrait</span></div>
+    </div>
+    <div class="photo-right-col">
+      <div class="photo-caption-bar">Jealous Sweets &middot; Tangy Worms</div>
+      <div class="photo-placeholder" style="flex:1;min-height:65px;">
+        <div class="photo-plus" style="font-size:1rem">＋</div>
+        <div class="photo-label" style="font-size:0.55rem">Product photo</div>
+      </div>
+      <div class="photo-caption-bar">Jealous Sweets &middot; Grizzly Bears</div>
+    </div>
+    <div class="photo-placeholder photo-wide">
+      <div class="photo-plus">＋</div>
+      <div class="photo-label">Trade show / retail visit / launch event<br><span style="color:#333">Wide format works well here</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial">
+  <p class="testimonial-quote">"The thing about Taz is he's been in the room when the buyer says no, when the bank says no, and when the co-founder walks out. You can't fake that kind of presence in a meeting."</p>
+  <div class="testimonial-attr">Founder &middot; Premium UK Food Brand &middot; Series A</div>
+</div>
+
+<!-- DIVISION DIVIDER -->
+<div class="division-divider">
+  <div class="division-divider-text">Division 02 – Accountancy Services</div>
+</div>
+
+<!-- ACCOUNTANCY INTRO -->
+<section id="accountancy" class="accountancy-intro">
+  <div class="reveal">
+    <div class="division-badge badge-accountancy" style="margin-bottom:1.4rem;">Division 02 – Accountancy</div>
+    <h2 class="accountancy-headline">Clear numbers. Plain advice. No jargon.</h2>
+  </div>
+  <div class="reveal">
+    <p class="accountancy-body">FCA-qualified, PwC-trained accountancy for sole traders, startups, and growing businesses. Practical, accurate, and always explained in plain English.</p>
+  </div>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="services-section">
+  <div class="section-eyebrow reveal"><div class="eyebrow-line"></div><span class="eyebrow-text">What we offer</span></div>
+  <h2 class="services-headline reveal">Everything a growing business needs.</h2>
+  <p class="services-subtext reveal">Delivered with the same rigour we applied running a scaling brand – because we know what matters to a business owner.</p>
+  <div class="services-grid reveal">
+    <div class="service-item">
+      <span class="service-icon">📊</span>
+      <h3 class="service-name">Annual Accounts</h3>
+      <p class="service-desc">Statutory accounts prepared and filed accurately for sole traders and limited companies, on time, every time.</p>
+    </div>
+    <div class="service-item">
+      <span class="service-icon">📋</span>
+      <h3 class="service-name">Self Assessment</h3>
+      <p class="service-desc">Personal tax returns handled properly – straightforward or complex, we take care of it from start to submission.</p>
+    </div>
+    <div class="service-item">
+      <span class="service-icon">🏢</span>
+      <h3 class="service-name">Corporation Tax</h3>
+      <p class="service-desc">Corporation tax computations and CT600 returns prepared accurately so you pay what's due – nothing more.</p>
+    </div>
+    <div class="service-item">
+      <span class="service-icon">📄</span>
+      <h3 class="service-name">VAT Returns</h3>
+      <p class="service-desc">VAT return preparation and timely filing with HMRC, keeping you fully compliant and penalty-free.</p>
+    </div>
+    <div class="service-item">
+      <span class="service-icon">👥</span>
+      <h3 class="service-name">Payroll</h3>
+      <p class="service-desc">Reliable payroll processing for businesses of all sizes, including RTI submissions, PAYE compliance and auto-enrolment.</p>
+    </div>
+    <div class="service-item">
+      <span class="service-icon">📒</span>
+      <h3 class="service-name">Bookkeeping</h3>
+      <p class="service-desc">Ongoing bookkeeping to keep your records clean, current and year-end ready – so nothing surprises you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TH BASUNIA -->
+<section class="why-section">
+  <div class="section-eyebrow reveal">
+    <div class="eyebrow-line" style="background:rgba(255,255,255,0.25);"></div>
+    <span class="eyebrow-text on-dark">Why TH Basunia</span>
+  </div>
+  <h2 class="why-headline reveal">A different kind of accountant.</h2>
+  <div class="why-grid reveal">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <h3 class="why-title">Real Business Experience</h3>
+      <p class="why-body">We've built and run a global FMCG business ourselves. We understand the decisions behind your numbers, not just the numbers themselves.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <h3 class="why-title">Big-Firm Rigour, Personal Service</h3>
+      <p class="why-body">PwC-trained precision delivered with a boutique, accessible approach. You'll always deal with someone who knows your business.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <h3 class="why-title">Plain English, Always</h3>
+      <p class="why-body">No jargon. No surprises. Everything explained clearly so you can make decisions with confidence – not confusion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-side">
+    <div class="division-badge badge-advisory" style="margin-bottom:1.4rem;">Founder Advisory</div>
+    <h2 class="contact-headline">Start a founder conversation.</h2>
+    <p class="contact-body">An initial call costs nothing but an hour. If we're a fit, we'll know. If we're not, you'll leave with at least one useful idea.</p>
+    <div class="contact-details">
+      <div class="contact-row"><span class="contact-label">Email</span><span class="contact-value">t.basunia@btinternet.com</span></div>
+      <div class="contact-row"><span class="contact-label">Phone</span><span class="contact-value">07980 449252</span></div>
+    </div>
+    <a href="mailto:t.basunia@btinternet.com" class="contact-btn contact-btn-advisory">Book an Introductory Call &rarr;</a>
+  </div>
+  <div class="contact-side">
+    <div class="division-badge badge-accountancy" style="margin-bottom:1.4rem;">Accountancy</div>
+    <h2 class="contact-headline">Get your numbers sorted.</h2>
+    <p class="contact-body">Whether it's your first year or you're outgrowing your current accountant, we're happy to have a no-obligation chat about what you need.</p>
+    <div class="contact-details">
+      <div class="contact-row"><span class="contact-label">Email</span><span class="contact-value">t.basunia@btinternet.com</span></div>
+      <div class="contact-row"><span class="contact-label">Phone</span><span class="contact-value">07980 449252</span></div>
+    </div>
+    <a href="mailto:t.basunia@btinternet.com" class="contact-btn contact-btn-accountancy">Get in Touch &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">TH <em>Basunia</em></div>
+  <div class="footer-copy">&copy; 2026 TH Basunia. All rights reserved. &middot; London, United Kingdom</div>
+  <div class="footer-legal">The trading name of THB Holdings Ltd &middot; FCA Qualified</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
