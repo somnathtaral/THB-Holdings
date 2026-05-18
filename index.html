@@ -348,15 +348,59 @@
     /* ── FOOTER ── */
     footer {
       background: #080808;
-      padding: 2.5rem 5rem;
-      display: flex; justify-content: space-between; align-items: center;
       border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .footer-top {
+      padding: 3rem 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: start;
+      gap: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-brand {}
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--paper); display: block; margin-bottom: 0.6rem; }
+    .footer-logo span { color: var(--rust); font-style: italic; }
+    .footer-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.2); line-height: 1.6; max-width: 220px; }
+    .footer-divs {
+      display: flex; gap: 3rem; justify-content: center;
+    }
+    .footer-div-col {}
+    .footer-div-label {
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--rust); margin-bottom: 0.8rem; font-weight: 500;
+    }
+    .footer-div-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .footer-div-links a {
+      font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none;
+      transition: color 0.2s; letter-spacing: 0.02em;
+    }
+    .footer-div-links a:hover { color: var(--rust); }
+    .footer-contact-col { text-align: right; }
+    .footer-contact-label {
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2); margin-bottom: 0.8rem;
+    }
+    .footer-contact-links { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-end; }
+    .footer-contact-links a {
+      font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-contact-links a:hover { color: var(--paper); }
+    .footer-bottom {
+      padding: 1.4rem 5rem;
+      display: flex; align-items: center; justify-content: space-between;
       flex-wrap: wrap; gap: 1rem;
     }
-    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--paper); }
-    .footer-logo span { color: var(--rust); font-style: italic; }
-    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
-    .footer-reg { font-size: 0.7rem; color: rgba(255,255,255,0.15); text-align: right; }
+    .footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.15); }
+    .footer-legal-links { display: flex; gap: 1.5rem; align-items: center; }
+    .footer-legal-links a {
+      font-size: 0.68rem; color: rgba(255,255,255,0.2); text-decoration: none;
+      transition: color 0.2s; letter-spacing: 0.05em;
+    }
+    .footer-legal-links a:hover { color: var(--rust); }
+    .footer-legal-links span { color: rgba(255,255,255,0.08); }
+    .footer-reg { font-size: 0.65rem; color: rgba(255,255,255,0.1); }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
@@ -407,8 +451,12 @@
       .why-grid { grid-template-columns: 1fr; }
       .contact-split { grid-template-columns: 1fr; }
       .contact-panel { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      footer { flex-direction: column; padding: 2rem 1.5rem; text-align: center; }
-      .footer-reg { text-align: center; }
+      .footer-top { grid-template-columns: 1fr; padding: 2.5rem 1.5rem 1.5rem; gap: 2rem; }
+      .footer-divs { flex-direction: column; gap: 1.5rem; justify-content: flex-start; }
+      .footer-contact-col { text-align: left; }
+      .footer-contact-links { align-items: flex-start; }
+      .footer-bottom { padding: 1.2rem 1.5rem; flex-direction: column; text-align: center; gap: 0.8rem; }
+      .footer-legal-links { justify-content: center; flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -790,9 +838,60 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">TH <span>Basunia</span></div>
-  <div class="footer-copy">© 2026 TH Basunia. All rights reserved. · London, United Kingdom</div>
-  <div class="footer-reg">The trading name of THB Holdings Ltd · FCA Qualified</div>
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <span class="footer-logo">TH <span>Basunia</span></span>
+      <p class="footer-tagline">Two businesses. One trusted name. Built from the inside. Trusted from experience.</p>
+    </div>
+
+    <!-- Division links -->
+    <div class="footer-divs">
+      <div class="footer-div-col">
+        <div class="footer-div-label">Founder Advisory</div>
+        <div class="footer-div-links">
+          <a href="#advisory">Commercial Advisory</a>
+          <a href="#advisory">Financial Advisory</a>
+          <a href="#advisory">Operational Advisory</a>
+          <a href="#advisory">Corporate · Fractional · Sprint</a>
+        </div>
+      </div>
+      <div class="footer-div-col">
+        <div class="footer-div-label">Accountancy</div>
+        <div class="footer-div-links">
+          <a href="#accountancy">Annual Accounts &amp; Tax</a>
+          <a href="#accountancy">VAT &amp; Bookkeeping</a>
+          <a href="#accountancy">Payroll &amp; Auto-Enrolment</a>
+          <a href="#accountancy">Company Secretarial</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact-col">
+      <div class="footer-contact-label">Get in Touch</div>
+      <div class="footer-contact-links">
+        <a href="mailto:t.basunia@btinternet.com">t.basunia@btinternet.com</a>
+        <a href="tel:07980449252">07980 449252</a>
+        <a href="https://wa.me/447980449252" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 TH Basunia. All rights reserved. · London, United Kingdom</div>
+    <div class="footer-legal-links">
+      <a href="#" onclick="openLegal('terms');return false;">Terms &amp; Conditions</a>
+      <span>·</span>
+      <a href="#" onclick="openLegal('privacy');return false;">Privacy Policy</a>
+      <span>·</span>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-reg">Trading name of THB Holdings Ltd · FCA Qualified · ICAEW Member</div>
+  </div>
 </footer>
 
 <!-- ── AI CHAT WIDGET ── -->
@@ -869,6 +968,435 @@
     #chat-launcher { bottom: 1.5rem; right: 1rem; }
   }
 </style>
+
+<!-- ══════════════════════════════════════════════════
+     LEGAL OVERLAY — Terms & Conditions + Privacy Policy
+     Embedded directly — no separate file needed for GoDaddy
+     ══════════════════════════════════════════════════ -->
+<style>
+  /* ── LEGAL OVERLAY ── */
+  #legal-overlay {
+    position: fixed; inset: 0; z-index: 9000;
+    background: var(--paper);
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    overflow-y: auto;
+    font-family: 'Epilogue', sans-serif;
+  }
+  #legal-overlay.open { transform: translateY(0); }
+
+  /* Legal nav */
+  .legal-nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5rem;
+    background: rgba(15,15,15,0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .legal-nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--paper);
+    letter-spacing: 0.02em; text-decoration: none; cursor: pointer;
+  }
+  .legal-nav-logo span { color: var(--rust); font-style: italic; }
+  .legal-close-btn {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(245,240,232,0.45);
+    background: none; border: none; cursor: pointer;
+    transition: color 0.2s; display: flex; align-items: center; gap: 0.5rem;
+    font-family: 'Epilogue', sans-serif;
+  }
+  .legal-close-btn:hover { color: var(--rust); }
+  .legal-close-btn::before { content: '←'; font-size: 0.85rem; }
+
+  /* Legal hero */
+  .legal-hero {
+    background: var(--ink);
+    padding: 9rem 5rem 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative; overflow: hidden;
+  }
+  .legal-hero-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem,12vw,13rem);
+    font-weight: 700; font-style: italic;
+    color: rgba(245,240,232,0.02);
+    white-space: nowrap; pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+  .legal-hero-tag {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--rust); font-weight: 500;
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .legal-hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rust); }
+  .legal-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem,4.5vw,4.2rem);
+    font-weight: 400; line-height: 1.08;
+    color: var(--paper); max-width: 720px;
+    position: relative; z-index: 2;
+  }
+  .legal-hero h1 em { font-style: italic; color: var(--rust); }
+  .legal-hero-meta {
+    margin-top: 2rem;
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    position: relative; z-index: 2;
+  }
+  .legal-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .legal-meta-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.3); }
+  .legal-meta-value { font-size: 0.82rem; color: rgba(245,240,232,0.6); }
+
+  /* Legal intro banner */
+  .legal-intro-banner {
+    background: var(--ink); padding: 3rem 5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+    border-bottom: 2px solid var(--rust);
+  }
+  .legal-banner-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem,1.8vw,1.3rem);
+    font-style: italic; color: var(--paper); max-width: 680px; line-height: 1.55;
+  }
+  .legal-banner-contact { display: flex; flex-direction: column; gap: 0.4rem; flex-shrink: 0; }
+  .legal-banner-contact a {
+    font-size: 0.75rem; letter-spacing: 0.1em;
+    color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .legal-banner-contact a:hover { color: var(--rust); }
+  .legal-banner-contact span { font-size: 0.62rem; color: rgba(245,240,232,0.25); text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 0.2rem; }
+
+  /* Tab nav */
+  .legal-tab-nav {
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5rem;
+    display: flex; gap: 0; position: sticky; top: 68px; z-index: 5;
+  }
+  .legal-tab-btn {
+    padding: 1.2rem 2rem;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 500; font-family: 'Epilogue', sans-serif;
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); border-bottom: 2px solid transparent;
+    transition: all 0.2s; margin-bottom: -1px;
+  }
+  .legal-tab-btn:hover { color: var(--ink); }
+  .legal-tab-btn.active { color: var(--rust); border-bottom-color: var(--rust); }
+
+  /* Content layout */
+  .legal-content-wrap {
+    max-width: 1200px; margin: 0 auto;
+    padding: 5rem 5rem;
+    display: grid; grid-template-columns: 240px 1fr; gap: 6rem;
+    align-items: start;
+  }
+  .legal-sidebar { position: sticky; top: 155px; }
+  .legal-sidebar-label {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--rust); margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .legal-sidebar-label::before { content: ''; display: block; width: 1rem; height: 1px; background: var(--rust); }
+  .legal-sidebar-nav { list-style: none; display: flex; flex-direction: column; gap: 0.2rem; }
+  .legal-sidebar-nav a {
+    font-size: 0.78rem; color: var(--muted); text-decoration: none;
+    padding: 0.4rem 0; display: block; transition: color 0.2s;
+    border-left: 2px solid transparent;
+    padding-left: 0.8rem; margin-left: -0.8rem; line-height: 1.4;
+  }
+  .legal-sidebar-nav a:hover { color: var(--rust); border-left-color: var(--rust); }
+
+  /* Document panels */
+  .legal-doc-panel { display: none; }
+  .legal-doc-panel.active { display: block; }
+  .legal-doc-section {
+    margin-bottom: 3.5rem; padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .legal-doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .legal-section-num {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--rust); margin-bottom: 0.6rem; font-weight: 500;
+  }
+  .legal-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem,2.5vw,1.8rem);
+    font-weight: 400; margin-bottom: 1.2rem; line-height: 1.2;
+  }
+  .legal-doc-body { font-size: 0.88rem; line-height: 1.85; color: #3a3630; }
+  .legal-doc-body p { margin-bottom: 1rem; }
+  .legal-doc-body p:last-child { margin-bottom: 0; }
+  .legal-doc-body strong { color: var(--ink); font-weight: 600; }
+  .legal-doc-list {
+    list-style: none; margin: 1rem 0;
+    display: flex; flex-direction: column; gap: 0.55rem;
+  }
+  .legal-doc-list li {
+    font-size: 0.85rem; color: #3a3630; line-height: 1.65;
+    padding-left: 1.4rem; position: relative;
+  }
+  .legal-doc-list li::before { content: '—'; position: absolute; left: 0; color: var(--rust); font-size: 0.75rem; }
+  .legal-doc-highlight {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--rust);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.85rem; line-height: 1.75; color: var(--ink-mid);
+  }
+  .legal-doc-table {
+    width: 100%; border-collapse: collapse; margin: 1.2rem 0;
+    font-size: 0.82rem;
+  }
+  .legal-doc-table th {
+    background: var(--ink); color: var(--paper);
+    padding: 0.7rem 1rem; text-align: left;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+  }
+  .legal-doc-table td {
+    padding: 0.8rem 1rem; border-bottom: 1px solid var(--border);
+    color: #3a3630; vertical-align: top; line-height: 1.6;
+  }
+  .legal-doc-table tr:last-child td { border-bottom: none; }
+  .legal-doc-table tr:hover td { background: var(--paper-warm); }
+
+  /* Legal footer */
+  .legal-footer {
+    background: #080808;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 2rem 5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .legal-footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--paper); }
+  .legal-footer-logo span { color: var(--rust); font-style: italic; }
+  .legal-footer-links { display: flex; gap: 1.5rem; align-items: center; }
+  .legal-footer-links a { font-size: 0.68rem; color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.2s; }
+  .legal-footer-links a:hover { color: var(--rust); }
+  .legal-footer-links span { color: rgba(255,255,255,0.08); }
+  .legal-footer-reg { font-size: 0.65rem; color: rgba(255,255,255,0.1); }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .legal-nav { padding: 1rem 1.5rem; }
+    .legal-hero { padding: 7rem 1.5rem 3rem; }
+    .legal-hero-meta { gap: 1.5rem; }
+    .legal-tab-nav { padding: 0 1.5rem; overflow-x: auto; }
+    .legal-tab-btn { padding: 1rem 1.2rem; white-space: nowrap; }
+    .legal-content-wrap { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2.5rem; }
+    .legal-sidebar { position: static; }
+    .legal-intro-banner { padding: 2rem 1.5rem; }
+    .legal-footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+    .legal-footer-links { justify-content: center; flex-wrap: wrap; }
+  }
+</style>
+
+<!-- ═══ LEGAL OVERLAY HTML ═══ -->
+<div id="legal-overlay" role="dialog" aria-modal="true" aria-label="Legal documents">
+
+  <!-- Nav -->
+  <nav class="legal-nav">
+    <span class="legal-nav-logo" onclick="closeLegal()">TH <span>Basunia</span></span>
+    <button class="legal-close-btn" onclick="closeLegal()">Back to Website</button>
+  </nav>
+
+  <!-- Hero -->
+  <div class="legal-hero">
+    <div class="legal-hero-bg">Legal</div>
+    <div class="legal-hero-tag">Transparency &amp; Trust</div>
+    <h1>Terms of Service &amp;<br><em>Privacy Policy</em></h1>
+    <div class="legal-hero-meta">
+      <div class="legal-meta-item"><div class="legal-meta-label">Business</div><div class="legal-meta-value">TH Basunia · THB Holdings Ltd</div></div>
+      <div class="legal-meta-item"><div class="legal-meta-label">Jurisdiction</div><div class="legal-meta-value">England &amp; Wales</div></div>
+      <div class="legal-meta-item"><div class="legal-meta-label">Last Updated</div><div class="legal-meta-value">May 2026</div></div>
+      <div class="legal-meta-item"><div class="legal-meta-label">Applies To</div><div class="legal-meta-value">All website visitors &amp; clients</div></div>
+    </div>
+  </div>
+
+  <!-- Intro banner -->
+  <div class="legal-intro-banner">
+    <div class="legal-banner-text">"We believe in plain English — always. These documents set out what you can expect from us, and what we ask in return."</div>
+    <div class="legal-banner-contact">
+      <span>Questions?</span>
+      <a href="mailto:t.basunia@btinternet.com">t.basunia@btinternet.com</a>
+      <a href="tel:07980449252">07980 449252</a>
+    </div>
+  </div>
+
+  <!-- Tab nav -->
+  <div class="legal-tab-nav">
+    <button class="legal-tab-btn active" onclick="legalSwitchTab('terms',this)">Terms &amp; Conditions</button>
+    <button class="legal-tab-btn" onclick="legalSwitchTab('privacy',this)">Privacy Policy</button>
+  </div>
+
+  <!-- Main content -->
+  <div class="legal-content-wrap">
+
+    <!-- Sidebar: Terms -->
+    <aside class="legal-sidebar" id="ls-terms">
+      <div class="legal-sidebar-label">Contents</div>
+      <ul class="legal-sidebar-nav">
+        <li><a href="#lt1" onclick="legalScrollTo('lt1')">1. About Us</a></li>
+        <li><a href="#lt2" onclick="legalScrollTo('lt2')">2. Services We Offer</a></li>
+        <li><a href="#lt3" onclick="legalScrollTo('lt3')">3. Engagement &amp; Agreement</a></li>
+        <li><a href="#lt4" onclick="legalScrollTo('lt4')">4. Fees &amp; Payment</a></li>
+        <li><a href="#lt5" onclick="legalScrollTo('lt5')">5. Intellectual Property</a></li>
+        <li><a href="#lt6" onclick="legalScrollTo('lt6')">6. Confidentiality</a></li>
+        <li><a href="#lt7" onclick="legalScrollTo('lt7')">7. Limitation of Liability</a></li>
+        <li><a href="#lt8" onclick="legalScrollTo('lt8')">8. Your Responsibilities</a></li>
+        <li><a href="#lt9" onclick="legalScrollTo('lt9')">9. Third-Party Links</a></li>
+        <li><a href="#lt10" onclick="legalScrollTo('lt10')">10. AI Chat Tool</a></li>
+        <li><a href="#lt11" onclick="legalScrollTo('lt11')">11. Termination</a></li>
+        <li><a href="#lt12" onclick="legalScrollTo('lt12')">12. Governing Law</a></li>
+        <li><a href="#lt13" onclick="legalScrollTo('lt13')">13. Changes to These Terms</a></li>
+        <li><a href="#lt14" onclick="legalScrollTo('lt14')">14. Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Sidebar: Privacy -->
+    <aside class="legal-sidebar" id="ls-privacy" style="display:none;">
+      <div class="legal-sidebar-label">Contents</div>
+      <ul class="legal-sidebar-nav">
+        <li><a href="#lp1" onclick="legalScrollTo('lp1')">1. Who We Are</a></li>
+        <li><a href="#lp2" onclick="legalScrollTo('lp2')">2. Information We Collect</a></li>
+        <li><a href="#lp3" onclick="legalScrollTo('lp3')">3. How We Use Your Data</a></li>
+        <li><a href="#lp4" onclick="legalScrollTo('lp4')">4. Legal Basis for Processing</a></li>
+        <li><a href="#lp5" onclick="legalScrollTo('lp5')">5. Data Retention</a></li>
+        <li><a href="#lp6" onclick="legalScrollTo('lp6')">6. Sharing Your Data</a></li>
+        <li><a href="#lp7" onclick="legalScrollTo('lp7')">7. Cookies</a></li>
+        <li><a href="#lp8" onclick="legalScrollTo('lp8')">8. AI Chat Tool &amp; Data</a></li>
+        <li><a href="#lp9" onclick="legalScrollTo('lp9')">9. Your Rights</a></li>
+        <li><a href="#lp10" onclick="legalScrollTo('lp10')">10. Security</a></li>
+        <li><a href="#lp11" onclick="legalScrollTo('lp11')">11. Changes to This Policy</a></li>
+        <li><a href="#lp12" onclick="legalScrollTo('lp12')">12. Contact &amp; Complaints</a></li>
+      </ul>
+    </aside>
+
+    <!-- ═══ TERMS & CONDITIONS ═══ -->
+    <div class="legal-doc-panel active" id="ldp-terms">
+      <div class="legal-doc-highlight">Please read these Terms &amp; Conditions carefully before using this website or engaging any of our services. By accessing this website or entering into an engagement with TH Basunia or THB Holdings Ltd, you agree to be bound by these terms.</div>
+
+      <div class="legal-doc-section" id="lt1"><div class="legal-section-num">Section 01</div><h2 class="legal-section-title">About Us</h2><div class="legal-doc-body"><p>This website is operated by <strong>TH Basunia</strong>, the trading name of <strong>THB Holdings Ltd</strong>, a company registered in England and Wales. Our principal place of business is in London, United Kingdom.</p><p>TH Basunia operates two service divisions: <strong>Basunia &amp; Co</strong> (Founder Advisory) and <strong>THB Holdings Ltd</strong> (Accountancy Services). Both divisions are led by Tahzeen Basunia FCA, a Fellow of the Institute of Chartered Accountants in England &amp; Wales (ICAEW), trained at PricewaterhouseCoopers LLP.</p><p>References to <strong>"we"</strong>, <strong>"us"</strong>, or <strong>"our"</strong> throughout these terms refer to TH Basunia and THB Holdings Ltd. References to <strong>"you"</strong> or <strong>"your"</strong> refer to the individual or entity visiting this website or engaging our services.</p></div></div>
+
+      <div class="legal-doc-section" id="lt2"><div class="legal-section-num">Section 02</div><h2 class="legal-section-title">Services We Offer</h2><div class="legal-doc-body"><p>We provide the following categories of professional services through this website and subsequent client engagements:</p><p><strong>Division 01 — Founder Advisory (Basunia &amp; Co)</strong></p><ul class="legal-doc-list"><li><strong>Commercial Advisory:</strong> Retailer strategy and buyer-room preparation; range architecture and SKU rationalisation; pricing, promotion and trade investment planning; National Account Manager hire and coaching; international market entry across Europe, Asia, GCC, and North America; distributor selection, contracting and oversight.</li><li><strong>Financial Advisory:</strong> 13-week cash flow modelling and weekly disciplines; gross margin diagnosis at channel, SKU, and customer level; working capital optimisation and stock cycle management; funding strategy covering angel investment, debt, asset-based lending, and grants; investor deck and data room preparation; board pack and KPI design for early-stage businesses.</li><li><strong>Operational Advisory:</strong> Co-manufacturer and co-packer selection; supply chain design for UK and international operations; third-party logistics (3PL) and warehousing strategy across channels; ERP and systems implementation for growing businesses; process design and operational scaling support.</li><li><strong>Engagement Formats:</strong> Corporate Advisory (board-level, equity-led); Fractional (1–2 days per week on monthly retainer); Sprint (project-based, defined deliverable, day-rate).</li></ul><p><strong>Division 02 — Accountancy Services (THB Holdings Ltd)</strong></p><ul class="legal-doc-list"><li><strong>Annual Accounts &amp; Statutory Reporting:</strong> Preparation of year-end financial statements and statutory accounts for sole traders, limited companies, and growing SMEs.</li><li><strong>Tax Returns &amp; Self Assessment:</strong> Preparation and submission of Corporation Tax returns, personal Self Assessment tax returns, and related filings to HMRC.</li><li><strong>VAT Registration &amp; Returns:</strong> VAT registration advice, preparation, and submission of VAT returns; VAT scheme guidance.</li><li><strong>Bookkeeping &amp; Management Accounts:</strong> Ongoing bookkeeping, bank reconciliation, and periodic management account preparation.</li><li><strong>Payroll &amp; Auto-Enrolment:</strong> Monthly or weekly payroll processing, PAYE submissions to HMRC, RTI filings, and workplace pension auto-enrolment compliance.</li><li><strong>Company Secretarial:</strong> Companies House filings, confirmation statements, registered office services, and general company administration support.</li><li><strong>Business &amp; Financial Advice:</strong> Start-up structuring, growth planning, cash flow management, and strategic financial guidance.</li></ul><p>The precise scope of services provided to any individual client will be confirmed in a separate engagement letter or service agreement. Nothing on this website constitutes a formal offer of services or a guarantee of availability.</p></div></div>
+
+      <div class="legal-doc-section" id="lt3"><div class="legal-section-num">Section 03</div><h2 class="legal-section-title">Engagement &amp; Agreement</h2><div class="legal-doc-body"><p>All formal client engagements are governed by a separate <strong>engagement letter</strong> issued prior to work commencing. These Terms &amp; Conditions apply to your use of this website and any preliminary enquiries or consultations.</p><p>An initial discovery or qualification call does not constitute a formal engagement and creates no contractual obligation on either party. A binding agreement arises only when a signed engagement letter or written confirmation of terms has been exchanged between us.</p><p>We reserve the right to decline any enquiry or engagement at our sole discretion, including where a conflict of interest exists or where the work falls outside our regulated competence.</p></div></div>
+
+      <div class="legal-doc-section" id="lt4"><div class="legal-section-num">Section 04</div><h2 class="legal-section-title">Fees &amp; Payment</h2><div class="legal-doc-body"><p>Our fee structure varies by service type and engagement format. Fees will be agreed and confirmed in writing before any engagement commences. Unless otherwise stated in an engagement letter:</p><ul class="legal-doc-list"><li>Advisory retainer fees are payable monthly in advance.</li><li>Day-rate sprint engagements are invoiced upon completion of the defined deliverable, or at agreed milestones for longer projects.</li><li>Accountancy services are invoiced in accordance with the schedule set out in your engagement letter.</li><li>Disbursements and third-party costs incurred on your behalf will be invoiced at cost with prior notice where reasonably practicable.</li></ul><p>Invoices are payable within <strong>14 days</strong> of the invoice date unless otherwise agreed in writing. We reserve the right to charge interest on overdue amounts at the rate provided for under the Late Payment of Commercial Debts (Interest) Act 1998.</p><p>All fees quoted are exclusive of VAT where applicable.</p></div></div>
+
+      <div class="legal-doc-section" id="lt5"><div class="legal-section-num">Section 05</div><h2 class="legal-section-title">Intellectual Property</h2><div class="legal-doc-body"><p>All content on this website — including text, design, graphics, layout, and code — is the intellectual property of TH Basunia / THB Holdings Ltd and is protected by copyright and other applicable laws. You may not reproduce, distribute, or exploit any content without our prior written consent.</p><p>In respect of deliverables created during a client engagement: unless otherwise agreed in writing, such deliverables are provided to you under a limited, non-exclusive licence for your internal business use. Ownership of the underlying methodologies and frameworks remains with us.</p></div></div>
+
+      <div class="legal-doc-section" id="lt6"><div class="legal-section-num">Section 06</div><h2 class="legal-section-title">Confidentiality</h2><div class="legal-doc-body"><p>We treat all client information as strictly confidential. We will not disclose your business information, financial data, or other confidential communications to any third party without your express consent, except where:</p><ul class="legal-doc-list"><li>Disclosure is required by law, regulation, or a court order.</li><li>Disclosure is required by our professional regulatory body (ICAEW).</li><li>Disclosure is necessary to prevent or detect crime (including money laundering) under applicable legislation.</li><li>The information is already in the public domain through no fault of ours.</li></ul><p>As a regulated professional, Tahzeen Basunia FCA is subject to ICAEW's ethical standards and mandatory reporting obligations, including those arising under the Proceeds of Crime Act 2002 and the Money Laundering Regulations.</p></div></div>
+
+      <div class="legal-doc-section" id="lt7"><div class="legal-section-num">Section 07</div><h2 class="legal-section-title">Limitation of Liability</h2><div class="legal-doc-body"><div class="legal-doc-highlight">The information on this website is provided for general informational purposes only. It does not constitute professional accounting, legal, financial, or investment advice, and should not be relied upon as such.</div><p>To the fullest extent permitted by law:</p><ul class="legal-doc-list"><li>We exclude all liability for any loss or damage arising from your use of, or reliance on, the information on this website.</li><li>Our liability in connection with any formal client engagement shall be limited to the fees paid by you for the specific service giving rise to the claim in the twelve months preceding the claim.</li><li>We are not liable for any indirect, consequential, special, or punitive loss or damage, including loss of profit, loss of revenue, or loss of data.</li><li>Nothing in these terms limits our liability for fraud, fraudulent misrepresentation, death or personal injury caused by our negligence, or any other liability that cannot be excluded by law.</li></ul><p>Professional indemnity insurance is maintained in accordance with ICAEW requirements. Details are available on request.</p></div></div>
+
+      <div class="legal-doc-section" id="lt8"><div class="legal-section-num">Section 08</div><h2 class="legal-section-title">Your Responsibilities</h2><div class="legal-doc-body"><p>To enable us to deliver our services effectively, you agree to:</p><ul class="legal-doc-list"><li>Provide us with accurate, complete, and timely information and documents as reasonably required.</li><li>Notify us promptly of any changes in your circumstances that may affect the services we are providing.</li><li>Ensure that any information you supply to us for the purpose of completing statutory filings or accounts is accurate to the best of your knowledge.</li><li>Not use any advisory output or deliverables for unlawful purposes.</li><li>Use this website lawfully and refrain from any conduct that could disrupt, damage, or gain unauthorised access to our systems.</li></ul></div></div>
+
+      <div class="legal-doc-section" id="lt9"><div class="legal-section-num">Section 09</div><h2 class="legal-section-title">Third-Party Links</h2><div class="legal-doc-body"><p>This website may contain links to third-party websites, including LinkedIn and communication platforms such as WhatsApp. These links are provided for your convenience only. We do not endorse, control, or take responsibility for the content, privacy practices, or availability of any third-party websites.</p></div></div>
+
+      <div class="legal-doc-section" id="lt10"><div class="legal-section-num">Section 10</div><h2 class="legal-section-title">AI Chat Tool</h2><div class="legal-doc-body"><p>This website features an AI-powered chat assistant. Please be aware of the following:</p><ul class="legal-doc-list"><li>The chat assistant is powered by a third-party AI model (Anthropic's Claude). Conversations are processed via Anthropic's API.</li><li>Do not share sensitive personal data, financial account details, passwords, or other confidential information through the chat tool.</li><li>Responses generated by the AI chat tool are for general informational purposes only and do not constitute professional advice. No client relationship is created through the use of the chat tool.</li><li>We review the operational parameters of the chat tool but are not responsible for individual AI-generated responses.</li></ul></div></div>
+
+      <div class="legal-doc-section" id="lt11"><div class="legal-section-num">Section 11</div><h2 class="legal-section-title">Termination of Engagement</h2><div class="legal-doc-body"><p>Either party may terminate a client engagement by providing written notice in accordance with the notice period specified in the relevant engagement letter (typically 30 days unless otherwise agreed).</p><p>We reserve the right to terminate an engagement immediately and without notice where you are in material breach of these terms, a professional conflict of interest arises, or fees remain outstanding beyond 60 days without a satisfactory payment arrangement.</p></div></div>
+
+      <div class="legal-doc-section" id="lt12"><div class="legal-section-num">Section 12</div><h2 class="legal-section-title">Governing Law</h2><div class="legal-doc-body"><p>These Terms &amp; Conditions and any disputes arising from them are governed by the laws of <strong>England and Wales</strong>. Both parties submit to the exclusive jurisdiction of the courts of England and Wales in relation to any dispute.</p></div></div>
+
+      <div class="legal-doc-section" id="lt13"><div class="legal-section-num">Section 13</div><h2 class="legal-section-title">Changes to These Terms</h2><div class="legal-doc-body"><p>We reserve the right to update these Terms &amp; Conditions at any time. Changes will be effective immediately upon posting to this page. Your continued use of this website following any changes constitutes your acceptance of the revised terms.</p></div></div>
+
+      <div class="legal-doc-section" id="lt14"><div class="legal-section-num">Section 14</div><h2 class="legal-section-title">Contact</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Channel</th><th>Details</th></tr></thead><tbody><tr><td>Email</td><td><a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);text-decoration:none;">t.basunia@btinternet.com</a></td></tr><tr><td>Telephone</td><td><a href="tel:07980449252" style="color:var(--rust);text-decoration:none;">07980 449252</a></td></tr><tr><td>WhatsApp</td><td><a href="https://wa.me/447980449252" style="color:var(--rust);text-decoration:none;">+44 7980 449252</a></td></tr><tr><td>Location</td><td>London, United Kingdom</td></tr><tr><td>Registered name</td><td>THB Holdings Ltd</td></tr></tbody></table></div></div>
+    </div><!-- end terms panel -->
+
+    <!-- ═══ PRIVACY POLICY ═══ -->
+    <div class="legal-doc-panel" id="ldp-privacy">
+      <div class="legal-doc-highlight">This Privacy Policy explains how TH Basunia (THB Holdings Ltd) collects, uses, and protects your personal data in compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</div>
+
+      <div class="legal-doc-section" id="lp1"><div class="legal-section-num">Section 01</div><h2 class="legal-section-title">Who We Are</h2><div class="legal-doc-body"><p><strong>Data Controller:</strong> THB Holdings Ltd, trading as TH Basunia, London, United Kingdom.</p><p><strong>Data Protection Contact:</strong> Tahzeen Basunia — <a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);">t.basunia@btinternet.com</a></p><p>We are committed to handling your personal data responsibly and lawfully. As a regulated accountant (ICAEW Fellow Chartered Accountant), we are also bound by professional ethical obligations regarding client confidentiality and data handling.</p></div></div>
+
+      <div class="legal-doc-section" id="lp2"><div class="legal-section-num">Section 02</div><h2 class="legal-section-title">Information We Collect</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Category</th><th>Examples</th><th>How Collected</th></tr></thead><tbody><tr><td><strong>Identity Data</strong></td><td>Name, job title, company name</td><td>Website enquiry, phone, email, chat tool</td></tr><tr><td><strong>Contact Data</strong></td><td>Email address, phone number</td><td>Website contact, email, WhatsApp</td></tr><tr><td><strong>Business Data</strong></td><td>Company revenue, sector, business stage, challenges</td><td>Qualification conversations, engagement onboarding</td></tr><tr><td><strong>Financial Data</strong></td><td>Financial records, tax information, bank details (accountancy clients)</td><td>Client onboarding and service delivery</td></tr><tr><td><strong>Communication Data</strong></td><td>Email correspondence, chat transcripts, call notes</td><td>Direct communication with us</td></tr><tr><td><strong>Technical Data</strong></td><td>IP address, browser type, pages visited</td><td>Automatic collection via website</td></tr></tbody></table><p>We do not knowingly collect personal data from individuals under the age of 18.</p></div></div>
+
+      <div class="legal-doc-section" id="lp3"><div class="legal-section-num">Section 03</div><h2 class="legal-section-title">How We Use Your Data</h2><div class="legal-doc-body"><ul class="legal-doc-list"><li><strong>Responding to enquiries:</strong> To respond to messages, calls, or chat conversations you initiate with us.</li><li><strong>Client qualification:</strong> To assess whether our services are a good fit for your needs.</li><li><strong>Delivering services:</strong> To provide advisory or accountancy services as agreed in an engagement letter.</li><li><strong>Statutory and regulatory compliance:</strong> To fulfil our obligations as a regulated accountant, including HMRC filings and anti-money laundering checks.</li><li><strong>Invoicing and financial administration:</strong> To issue invoices, process payments, and manage our client accounts.</li><li><strong>Professional record-keeping:</strong> To maintain records of client engagements as required by ICAEW professional standards.</li><li><strong>Website improvement:</strong> To understand how our website is used and improve its performance.</li></ul></div></div>
+
+      <div class="legal-doc-section" id="lp4"><div class="legal-section-num">Section 04</div><h2 class="legal-section-title">Legal Basis for Processing</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Basis</th><th>When It Applies</th></tr></thead><tbody><tr><td><strong>Contract</strong></td><td>Processing necessary to perform services under our engagement letter, or to take steps at your request before entering a contract.</td></tr><tr><td><strong>Legal Obligation</strong></td><td>Where we are required to process data to comply with UK law (e.g. HMRC reporting, anti-money laundering legislation, ICAEW obligations).</td></tr><tr><td><strong>Legitimate Interests</strong></td><td>For enquiry handling, website analytics, and business communications where our interests do not override your rights.</td></tr><tr><td><strong>Consent</strong></td><td>Where you have provided explicit consent, e.g. to receive business insights or marketing communications. Consent can be withdrawn at any time.</td></tr></tbody></table></div></div>
+
+      <div class="legal-doc-section" id="lp5"><div class="legal-section-num">Section 05</div><h2 class="legal-section-title">Data Retention</h2><div class="legal-doc-body"><ul class="legal-doc-list"><li><strong>Client accounting records:</strong> Retained for a minimum of 6 years following the end of the relevant tax year, in accordance with HMRC requirements and ICAEW standards.</li><li><strong>Engagement correspondence and advisory files:</strong> Retained for 6 years from the end of the engagement.</li><li><strong>Anti-money laundering identity verification records:</strong> Retained for 5 years from the end of the client relationship, as required by the Money Laundering Regulations.</li><li><strong>Enquiry and pre-engagement data:</strong> Retained for 12 months from the date of last contact where no engagement is entered into, then securely deleted.</li><li><strong>Website technical data:</strong> Retained in anonymised or aggregated form only.</li></ul></div></div>
+
+      <div class="legal-doc-section" id="lp6"><div class="legal-section-num">Section 06</div><h2 class="legal-section-title">Sharing Your Data</h2><div class="legal-doc-body"><p>We do not sell, rent, or trade your personal data. We may share your data with the following categories of third party, strictly as required to deliver our services or meet legal obligations:</p><ul class="legal-doc-list"><li><strong>HMRC and Companies House:</strong> As required for statutory filings and regulatory compliance.</li><li><strong>ICAEW:</strong> Our professional regulatory body, where required for compliance or disciplinary processes.</li><li><strong>Cloud service and software providers:</strong> Including cloud accounting platforms and secure document storage services used to deliver our accountancy services.</li><li><strong>Anthropic (AI Chat Tool):</strong> Conversations conducted via the AI chat widget on our website are processed by Anthropic's API.</li><li><strong>Legal and professional advisers:</strong> Where required for the defence of legal claims or receipt of professional advice.</li><li><strong>Law enforcement or regulatory authorities:</strong> Where required by law, including mandatory reporting obligations under anti-money laundering legislation.</li></ul></div></div>
+
+      <div class="legal-doc-section" id="lp7"><div class="legal-section-num">Section 07</div><h2 class="legal-section-title">Cookies</h2><div class="legal-doc-body"><p>This website uses a minimal set of cookies. We do not use tracking cookies or third-party advertising cookies.</p><ul class="legal-doc-list"><li><strong>Functional cookies:</strong> Essential for the website to operate correctly, including maintaining chat session state.</li><li><strong>Analytics (if applicable):</strong> Where we use any analytics tools, these are configured to anonymise IP addresses and not to track individual users across sessions.</li></ul><p>You can control or delete cookies via your browser settings at any time.</p></div></div>
+
+      <div class="legal-doc-section" id="lp8"><div class="legal-section-num">Section 08</div><h2 class="legal-section-title">AI Chat Tool &amp; Data</h2><div class="legal-doc-body"><ul class="legal-doc-list"><li>Your chat messages are transmitted to <strong>Anthropic's API</strong> for processing in order to generate responses. Anthropic's privacy policy governs their handling of this data.</li><li>We recommend that you <strong>do not share sensitive personal data, financial account details, national insurance numbers, or other confidential information</strong> through the chat tool.</li><li>Conversation data may be reviewed by us for the purpose of improving lead qualification and service quality.</li><li>The AI chat tool is powered by a US-based company. Data transmitted through the tool may be processed outside the UK. Anthropic operates appropriate data transfer safeguards.</li></ul><p>If you prefer not to use the AI chat tool, you are welcome to contact us directly by email, phone, or WhatsApp.</p></div></div>
+
+      <div class="legal-doc-section" id="lp9"><div class="legal-section-num">Section 09</div><h2 class="legal-section-title">Your Rights</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Right</th><th>What It Means</th></tr></thead><tbody><tr><td><strong>Access</strong></td><td>To request a copy of the personal data we hold about you (subject access request).</td></tr><tr><td><strong>Rectification</strong></td><td>To ask us to correct inaccurate or incomplete personal data.</td></tr><tr><td><strong>Erasure</strong></td><td>To request deletion of your personal data where there is no legitimate reason for us to continue holding it.</td></tr><tr><td><strong>Restriction</strong></td><td>To request that we restrict the processing of your data in certain circumstances.</td></tr><tr><td><strong>Portability</strong></td><td>To receive your personal data in a structured, machine-readable format where applicable.</td></tr><tr><td><strong>Objection</strong></td><td>To object to our processing of your data where we rely on legitimate interests as our lawful basis.</td></tr><tr><td><strong>Withdraw Consent</strong></td><td>To withdraw consent at any time where processing is consent-based.</td></tr></tbody></table><p>To exercise any of these rights, please contact us at <a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);">t.basunia@btinternet.com</a>. We will respond within <strong>one calendar month</strong> in accordance with UK GDPR requirements. There is no charge for making a request.</p></div></div>
+
+      <div class="legal-doc-section" id="lp10"><div class="legal-section-num">Section 10</div><h2 class="legal-section-title">Security</h2><div class="legal-doc-body"><p>We implement appropriate technical and organisational measures to protect your data against unauthorised access, loss, destruction, or alteration. In the event of a personal data breach that poses a risk to your rights and freedoms, we will notify the Information Commissioner's Office (ICO) within 72 hours as required and will contact affected individuals where necessary.</p></div></div>
+
+      <div class="legal-doc-section" id="lp11"><div class="legal-section-num">Section 11</div><h2 class="legal-section-title">Changes to This Policy</h2><div class="legal-doc-body"><p>We may update this Privacy Policy from time to time. The most current version will always be available on this website. Where changes are material, we will notify active clients directly by email before the changes take effect.</p></div></div>
+
+      <div class="legal-doc-section" id="lp12"><div class="legal-section-num">Section 12</div><h2 class="legal-section-title">Contact &amp; Complaints</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Channel</th><th>Details</th></tr></thead><tbody><tr><td>Email</td><td><a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);text-decoration:none;">t.basunia@btinternet.com</a></td></tr><tr><td>Telephone</td><td><a href="tel:07980449252" style="color:var(--rust);text-decoration:none;">07980 449252</a></td></tr><tr><td>Location</td><td>London, United Kingdom</td></tr></tbody></table><p style="margin-top:1.2rem;">If you are unhappy with how we have handled your personal data, you have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong>: <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:var(--rust);">ico.org.uk</a> · Helpline: 0303 123 1113</p></div></div>
+    </div><!-- end privacy panel -->
+
+  </div><!-- end content-wrap -->
+
+  <!-- Legal footer -->
+  <footer class="legal-footer">
+    <div class="legal-footer-logo">TH <span>Basunia</span></div>
+    <div class="legal-footer-links">
+      <a href="#" onclick="legalSwitchTab('terms',document.querySelectorAll('.legal-tab-btn')[0]);return false;">Terms &amp; Conditions</a>
+      <span>·</span>
+      <a href="#" onclick="legalSwitchTab('privacy',document.querySelectorAll('.legal-tab-btn')[1]);return false;">Privacy Policy</a>
+      <span>·</span>
+      <a href="#" onclick="closeLegal();return false;">← Back to Website</a>
+    </div>
+    <div class="legal-footer-reg">Trading name of THB Holdings Ltd · FCA Qualified · ICAEW Member</div>
+  </footer>
+
+</div><!-- end legal-overlay -->
+
+<script>
+  /* ── LEGAL OVERLAY FUNCTIONS ── */
+  function openLegal(tab) {
+    const overlay = document.getElementById('legal-overlay');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    overlay.scrollTop = 0;
+    if (tab === 'privacy') {
+      const btns = document.querySelectorAll('.legal-tab-btn');
+      legalSwitchTab('privacy', btns[1]);
+    } else {
+      const btns = document.querySelectorAll('.legal-tab-btn');
+      legalSwitchTab('terms', btns[0]);
+    }
+  }
+  function closeLegal() {
+    document.getElementById('legal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function legalSwitchTab(panel, btn) {
+    document.querySelectorAll('.legal-doc-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.legal-sidebar').forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.legal-tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('ldp-' + panel).classList.add('active');
+    document.getElementById('ls-' + panel).style.display = 'block';
+    btn.classList.add('active');
+    document.getElementById('legal-overlay').scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function legalScrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = el.getBoundingClientRect().top + document.getElementById('legal-overlay').scrollTop - 160;
+      document.getElementById('legal-overlay').scrollTo({ top: offset, behavior: 'smooth' });
+    }
+    return false;
+  }
+  /* Close on Escape */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLegal();
+  });
+</script>
 
 <button id="chat-launcher" onclick="toggleChat()" aria-label="Chat with us">
   <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
