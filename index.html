@@ -134,7 +134,7 @@
       background: var(--paper-warm);
       border-bottom: 1px solid var(--border);
       padding: 2.5rem 5rem;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
     }
     .stat-item {
       padding: 0 2rem; border-right: 1px solid var(--border);
@@ -328,6 +328,18 @@
       font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; transition: all 0.2s;
     }
+    .linkedin-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1rem; padding: 0.65rem 1.2rem; font-size: 0.72rem;
+      font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(245,240,232,0.6); background: transparent;
+    }
+    .linkedin-btn:hover { background: #0077b5; color: white; border-color: #0077b5; }
+    .linkedin-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+    .nav-linkedin { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: rgba(245,240,232,0.5); border: 1px solid rgba(245,240,232,0.15); transition: all 0.2s; }
+    .nav-linkedin:hover { color: #0077b5; border-color: #0077b5; }
+    .nav-linkedin svg { width: 13px; height: 13px; fill: currentColor; }
     .cta-advisory { background: var(--rust); color: var(--paper); }
     .cta-advisory:hover { background: var(--rust-light); }
     .cta-accountancy { background: var(--slate); color: var(--paper); }
@@ -410,6 +422,7 @@
     <li><a href="#accountancy">Accountancy</a></li>
     <li><a href="#founder">About Taz</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener" class="nav-linkedin"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</a></li>
   </ul>
   <div class="nav-pill">
     <a href="#advisory" class="advisory">Advisory</a>
@@ -459,6 +472,10 @@
   <div class="stat-item">
     <div class="stat-num">FCA</div>
     <div class="stat-desc">Fellow Chartered Accountant · PwC trained</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="font-size:1.6rem;">ICAEW</div>
+    <div class="stat-desc">Institute of Chartered Accountants in England &amp; Wales</div>
   </div>
 </div>
 
@@ -512,22 +529,22 @@
       <div class="who-card">
         <div class="who-num">i.</div>
         <div class="who-title">You've landed your first big retailer</div>
-        <div class="who-body">Selfridges, Whole Foods, Holland & Barrett — you got the listing. Now you need to keep it, expand it, and not get crushed by margin compression and slotting fees.</div>
+        <div class="who-body">Whether it's your first major supermarket like Buzzazda or a premium independent — getting the listing is only the start. Managing listing fees, navigating promotional cycles every six months (which catch founders off guard), knowing what marketing to do, and how to engage buyers effectively — that's where the real work begins.</div>
       </div>
       <div class="who-card">
         <div class="who-num">ii.</div>
         <div class="who-title">Cash is tight but ambition is bigger</div>
-        <div class="who-body">You've raised an angel round, perhaps a seed. The runway is real but finite. Working capital, gross margin, factory MOQs and DTC vs grocery economics need somebody who's solved them before.</div>
+        <div class="who-body">You've raised an angel round, perhaps a seed. The runway is real but finite. Working capital, gross margin, factory MOQs and DTC vs grocery economics need somebody who's solved them before. I had my finger on the pulse every single day — and always maintained a 12-month runway to plan for anything, including the unexpected.</div>
       </div>
       <div class="who-card">
         <div class="who-num">iii.</div>
         <div class="who-title">International is calling — and confusing</div>
-        <div class="who-body">Distributors are pitching, foreign retailers want listings, the export grants exist. But every market has its own rules, and the wrong first move overseas can sink a UK business. I've made the mistakes so you don't have to.</div>
+        <div class="who-body">So many foreign markets, so many pitfalls. You need to know where to prioritise and where to focus. There are red herrings everywhere. You need to know how to deal with payment terms — everyone will want credit, and that's not always the way to go. I've navigated eight markets so you don't have to repeat my mistakes.</div>
       </div>
       <div class="who-card">
         <div class="who-num">iv.</div>
         <div class="who-title">You're scaling — but not professionalising</div>
-        <div class="who-body">You're still the brand, the buyer, the bookkeeper, the recruiter. The team's growing but the operating model isn't. You need someone who can sit alongside you for 1–2 days a week and quietly install the rails.</div>
+        <div class="who-body">You're still the brand, the buyer, the bookkeeper, the recruiter. The team's growing but the operating model isn't. From the start at Jealous Sweets we partnered with DTI — a fantastic partner who helped us build the right foundations. Now more than ever, using AI, you can generate processes and systems that scale your business very fast. I'll help you install the rails.</div>
       </div>
     </div>
   </div>
@@ -617,6 +634,7 @@
         <p>For fourteen years I co-founded and ran a premium plant-based confectionery brand — Jealous Sweets — from a London kitchen table to listings in Virgin Airlines, Selfridges, Harrods, Harvey Nichols, Whole Foods, Holland &amp; Barrett and Asda, and into eight international markets across Asia, the Middle East and beyond.</p>
         <p>I personally raised over £1m in angel funding — every single shareholder in the business came via me. I negotiated bank facilities. I won a trademark fight against a much bigger company. I picked the wrong distributor and lived with the consequences.</p>
         <p>I navigated the business through Brexit — our manufacturer is based in France, which created severe EUR/GBP currency exposure and supply chain disruption overnight. I steered us through COVID when the entire foodservice and travel retail sector shut down. And in early 2022, I managed the business through global commodity price shocks that saw sugar prices rise by over 40%, hammering our cost base at a time when we could least afford it.</p>
+        <p>Before all of that, my training and experience at PwC gave me deep insight into entering any business and understanding where all the risks are — assessing the cradle-to-grave scenario from start to finish, identifying where processes and systems are strong, where they are adequate, and where they need improving. That framework applies whether it's finance, FMCG, or any sector I walk into.</p>
         <p>That's not a CV — that's a curriculum. And it's why I now work alongside founders facing the same decisions, from the inside, not from a deck. No theories. No frameworks borrowed from McKinsey. Just hard-won, founder-grade judgement, sat next to you for as long as you need it.</p>
         <div class="founder-sig">
           <div class="founder-sig-name">Tahzeen "Taz" Basunia, FCA</div>
@@ -657,7 +675,7 @@
   <div class="testimonial">
     <div class="testimonial-inner">
       <div class="testimonial-quote">"The thing about Taz is he's been in the room when the buyer says no, when the bank says no, when the co-founder walks out, when Brexit rewrites your supply chain overnight, when COVID shuts your market, and when commodity prices go through the roof. You can't fake that kind of presence in a meeting."</div>
-      <div class="testimonial-attr">Founder · Premium UK Food Brand · Series A</div>
+      <div class="testimonial-attr">Founder · Premium UK Food Brand</div>
     </div>
   </div>
 
@@ -756,6 +774,7 @@
     <p>An initial call costs nothing but an hour. If we're a fit, we'll know. If we're not, you'll leave with at least one useful idea.</p>
     <a href="mailto:t.basunia@btinternet.com" class="contact-link"><span>Email</span> t.basunia@btinternet.com</a>
     <a href="tel:07980449252" class="contact-link"><span>Phone</span> 07980 449252</a>
+    <a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener" class="linkedin-btn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</a>
     <a href="mailto:t.basunia@btinternet.com?subject=Founder Advisory Enquiry" class="contact-cta cta-advisory">Get in Touch →</a>
   </div>
   <div class="contact-panel">
@@ -764,6 +783,7 @@
     <p>Whether it's your first year or you're outgrowing your current accountant, we're happy to have a no-obligation chat about what you need.</p>
     <a href="mailto:t.basunia@btinternet.com" class="contact-link"><span>Email</span> t.basunia@btinternet.com</a>
     <a href="tel:07980449252" class="contact-link"><span>Phone</span> 07980 449252</a>
+    <a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener" class="linkedin-btn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</a>
     <a href="mailto:t.basunia@btinternet.com?subject=Accountancy Enquiry" class="contact-cta cta-accountancy">Get in Touch →</a>
   </div>
 </div>
@@ -855,67 +875,75 @@
   <svg class="close-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
 </button>
 
+<!-- WhatsApp click-to-chat button (Note 11) -->
+<a id="whatsapp-btn" href="https://wa.me/447980449252" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
 <div id="chat-window">
   <div class="chat-header">
     <div class="chat-avatar">TB</div>
     <div class="chat-header-text">
-      <div class="chat-header-name">TH Basunia Assistant</div>
-      <div class="chat-header-status"><span class="status-dot"></span> Online — typically replies instantly</div>
+      <div class="chat-header-name">TH Basunia — Let's Talk</div>
+      <div class="chat-header-status"><span class="status-dot"></span> Qualifying new enquiries</div>
     </div>
   </div>
   <div class="chat-messages" id="chat-messages"></div>
   <div class="quick-replies" id="quick-replies">
-    <button class="qr-btn" onclick="sendQuick('What is founder advisory?')">Founder Advisory</button>
-    <button class="qr-btn" onclick="sendQuick('What accountancy services do you offer?')">Accountancy</button>
-    <button class="qr-btn" onclick="sendQuick('Who is Taz Basunia?')">About Taz</button>
-    <button class="qr-btn" onclick="sendQuick('How do I get started?')">Get Started</button>
+    <button class="qr-btn" onclick="sendQuick('I am a founder looking for advisory support')">Founder Advisory</button>
+    <button class="qr-btn" onclick="sendQuick('I need accountancy services')">Accountancy</button>
+    <button class="qr-btn" onclick="sendQuick('I want to learn more about Taz')">About Taz</button>
+    <button class="qr-btn" onclick="sendQuick('I have a quick question')">Quick Question</button>
   </div>
   <div class="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Ask a question…" onkeydown="if(event.key==='Enter') sendMessage()" />
+    <input id="chat-input" type="text" placeholder="Tell me about your business…" onkeydown="if(event.key==='Enter') sendMessage()" />
     <button id="chat-send" onclick="sendMessage()">
       <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
     </button>
   </div>
 </div>
 
+<style>
+  #whatsapp-btn {
+    position: fixed; bottom: 2rem; right: 5.5rem; z-index: 999;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #25d366; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+    transition: transform 0.2s, background 0.2s; text-decoration: none;
+  }
+  #whatsapp-btn:hover { transform: scale(1.08); background: #1ebe5d; }
+</style>
+
 <script>
-  const SYSTEM_PROMPT = `You are the helpful AI assistant for TH Basunia, a London-based business with two divisions:
+  const SYSTEM_PROMPT = `You are a lead qualification assistant for TH Basunia, a London-based business with two divisions: Founder Advisory (Basunia & Co) and Accountancy (THB Holdings Ltd).
 
-DIVISION 1 — FOUNDER ADVISORY (Basunia & Co)
-Taz works with FMCG and consumer brand founders, sub-£5m revenue, who need commercial, financial or operational support. He offers three engagement types:
-- Corporate Advisory: Quarterly, equity-led, board-level seat, monthly calls
-- Fractional: 1-2 days per week, 6+ months, monthly retainer
-- Sprint: 2-6 week interim project, day-rate, defined deliverable
+YOUR ROLE: Qualify whether the person visiting this website is a good potential lead for Taz Basunia. You do this by asking a few targeted questions, gathering key information, and assessing fit. Be warm, conversational, and professional.
 
-Three service lines:
-1. Commercial: retailer strategy, buyer-room prep, range architecture, SKU rationalisation, pricing, NAM hire & coaching, international market entry (Europe, Asia, GCC, North America), distributor selection
-2. Financial: 13-week cash flow modelling, gross margin diagnosis, working capital optimisation, funding strategy (angel/debt/grants), investor decks, board packs, bank facility negotiation
-3. Operational: co-manufacturer selection, supply chain design, 3PL & warehousing, operating model design, first ops hire, ERP/NPD/QC foundations
+QUALIFICATION FLOW:
+1. First, find out what brought them here — are they looking for founder advisory support, accountancy services, or something else?
+2. If Founder Advisory: ask about their business (what stage, what revenue range, what sector, what challenge they face right now).
+3. If Accountancy: ask if they are a sole trader, startup, or growing business; ask their approximate turnover; ask what services they currently use or need.
+4. Assess whether this is a good lead based on: sub-£5m revenue FMCG/consumer brand (Advisory), or sole trader/SME needing practical accountancy (Accountancy).
+5. If they are a good fit, tell them warmly and encourage them to reach out directly: t.basunia@btinternet.com or call 07980 449252.
+6. If they are not an obvious fit, still be helpful and suggest the most relevant service or resource.
 
-DIVISION 2 — ACCOUNTANCY (THB Holdings Ltd)
-Services: Annual Accounts, Self Assessment, Corporation Tax, VAT Returns, Payroll, Bookkeeping. For sole traders, startups and growing businesses.
-
-ABOUT TAZ (Tahzeen "Taz" Basunia, FCA):
-- Fellow Chartered Accountant (FCA)
-- Trained at PwC, Southwark Towers, London Bridge, 2000–2006, specialising in Banking & Capital Markets. Clients included JPMorgan, Commerzbank and Barclays.
-- Co-founded and ran Jealous Sweets for 14 years
-- Scaled into 8+ international markets
-- Personally raised over £1m in angel funding
-- Navigated Brexit, COVID, and global sugar price shocks
-
-CONTACT:
-Email: t.basunia@btinternet.com
-Phone: 07980 449252
-Location: London, United Kingdom
+KEY INFORMATION ABOUT TAZ:
+- Fellow Chartered Accountant (FCA), trained at PwC (Banking & Capital Markets, 2000–2006), clients included JPMorgan, Commerzbank, Barclays.
+- Co-founded Jealous Sweets, ran it for 14 years, scaled to 8+ international markets, raised over £1m in angel funding.
+- Navigated Brexit, COVID, global commodity price shocks.
 
 INSTRUCTIONS:
-- Be warm, concise and professional
-- Keep answers to 2-4 sentences unless more detail is needed
-- Always end with a soft call to action
-- Never make up information not listed above`;
+- Ask ONE question at a time — never fire multiple questions at once.
+- Be concise and warm.
+- After 3–4 exchanges, make a clear assessment: good fit or not, and what to do next.
+- If a good lead: strongly encourage them to email or call Taz directly.
+- Never make up information not listed above.`;
 
+  // Lead scoring state
+  const leadData = { type: null, stage: null, sector: null, challenge: null, revenue: null, score: 0 };
   const history = [];
   let chatOpen = false;
+  let qualificationComplete = false;
 
   function toggleChat() {
     chatOpen = !chatOpen;
@@ -924,7 +952,7 @@ INSTRUCTIONS:
     win.classList.toggle('open', chatOpen);
     btn.classList.toggle('open', chatOpen);
     if (chatOpen && history.length === 0) {
-      setTimeout(() => addBotMessage("Hi there 👋 I'm the TH Basunia assistant. I can answer questions about our Founder Advisory or Accountancy services, or tell you more about Taz. What would you like to know?"), 400);
+      setTimeout(() => addBotMessage("Hi there 👋 I'm here to help connect you with Taz. To make sure we're a good fit, can I ask — what brought you to this site today? Are you a founder looking for advisory support, a business needing accountancy, or something else?"), 400);
     }
   }
 
