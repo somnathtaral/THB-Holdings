@@ -64,6 +64,13 @@
     .nav-pill .advisory:hover { background: var(--rust-light); }
     .nav-pill .accountancy { background: var(--slate); color: var(--paper); }
     .nav-pill .accountancy:hover { background: var(--slate-light); }
+    .nav-get-in-touch {
+      padding: 0.55rem 1.2rem; font-size: 0.72rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s;
+      border: 1.5px solid var(--rust); color: var(--rust); background: transparent;
+    }
+    .nav-get-in-touch:hover { background: var(--rust); color: var(--paper); }
 
     /* ── HERO ── */
     .hero {
@@ -128,6 +135,11 @@
     .division-btn.advisory:hover { background: var(--rust-light); }
     .division-btn.accountancy { background: var(--slate); color: var(--paper); }
     .division-btn.accountancy:hover { background: var(--slate-light); }
+    .division-btn.hero-cta-btn {
+      border: 2px solid rgba(245,240,232,0.4); color: var(--paper);
+      background: transparent; position: relative;
+    }
+    .division-btn.hero-cta-btn:hover { border-color: var(--rust); color: var(--rust); background: rgba(184,74,46,0.08); }
 
     /* ── STATS ── */
     .stats-bar {
@@ -475,6 +487,55 @@
       .hero-photo { display: none; }
     } */
 
+    /* ── BOTTOM CTA BANNER ── */
+    .bottom-cta-banner {
+      background: var(--ink); padding: 6rem 5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .bottom-cta-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 3rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;
+    }
+    .bottom-cta-text { flex: 1; min-width: 280px; }
+    .bottom-cta-tag {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--rust); font-weight: 500;
+      display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem;
+    }
+    .bottom-cta-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rust); }
+    .bottom-cta-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 400;
+      color: var(--paper); line-height: 1.1; margin-bottom: 1rem;
+    }
+    .bottom-cta-heading em { font-style: italic; color: var(--rust); }
+    .bottom-cta-sub {
+      font-size: 0.9rem; line-height: 1.75; color: rgba(245,240,232,0.45);
+      max-width: 480px;
+    }
+    .bottom-cta-actions {
+      display: flex; flex-direction: column; gap: 0.8rem; flex-shrink: 0;
+    }
+    .bottom-cta-btn {
+      padding: 1rem 2rem; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s; text-align: center;
+      display: block;
+    }
+    .bottom-cta-btn.primary { background: var(--rust); color: var(--paper); }
+    .bottom-cta-btn.primary:hover { background: var(--rust-light); }
+    .bottom-cta-btn.secondary {
+      border: 1.5px solid rgba(245,240,232,0.25); color: rgba(245,240,232,0.6);
+      background: transparent;
+    }
+    .bottom-cta-btn.secondary:hover { border-color: var(--paper); color: var(--paper); }
+    @media (max-width: 960px) {
+      .bottom-cta-banner { padding: 4rem 1.5rem; }
+      .bottom-cta-inner { flex-direction: column; }
+      .bottom-cta-actions { width: 100%; }
+      .bottom-cta-btn { width: 100%; }
+    }
+
   </style>
 </head>
 <body>
@@ -492,6 +553,7 @@
   <div class="nav-pill">
     <a href="#advisory" class="advisory">Advisory</a>
     <a href="#accountancy" class="accountancy">Accountancy</a>
+    <a href="#contact" class="nav-get-in-touch">Get in Touch</a>
   </div>
 </nav>
 
@@ -514,6 +576,10 @@
         <a href="#accountancy" class="division-btn accountancy">
           Accountancy Services
           <small>Tax · Payroll · Bookkeeping · Accounts</small>
+        </a>
+        <a href="#contact" class="division-btn hero-cta-btn">
+          Get in Touch
+          <small>Start a conversation today</small>
         </a>
       </div>
     </div>
@@ -698,10 +764,11 @@
       <div>
         <div style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rust);display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;"><span style="display:block;width:1.5rem;height:1px;background:var(--rust);"></span>The Founder Behind It</div>
         <h2>I've sat in your chair.</h2>
+        <p>I grew up in Kingston upon Thames, Surrey, and attended Tiffin Boys' School — one of the country's leading grammar schools. From there I read Mathematics and Statistics at Imperial College London, before joining PwC at their Southwark Towers office, where I spent six years specialising in Banking and Capital Markets.</p>
         <p>For fourteen years I co-founded and ran a premium plant-based confectionery brand — Jealous Sweets — from a London kitchen table to listings in Virgin Airlines, Selfridges, Harrods, Harvey Nichols, Whole Foods, Holland &amp; Barrett and Asda, and into eight international markets across Asia, the Middle East and beyond.</p>
         <p>I personally raised over £1m in angel funding — every single shareholder in the business came via me. I negotiated bank facilities. I won a trademark fight against a much bigger company. I picked the wrong distributor and lived with the consequences.</p>
         <p>I navigated the business through Brexit — our manufacturer is based in France, which created severe EUR/GBP currency exposure and supply chain disruption overnight. I steered us through COVID when the entire foodservice and travel retail sector shut down. And in early 2022, I managed the business through global commodity price shocks that saw sugar prices rise by over 40%, hammering our cost base at a time when we could least afford it.</p>
-        <p>Before all of that, my training and experience at PwC gave me deep insight into entering any business and understanding where all the risks are — assessing the cradle-to-grave scenario from start to finish, identifying where processes and systems are strong, where they are adequate, and where they need improving. That framework applies whether it's finance, FMCG, or any sector I walk into.</p>
+        <p>That grounding gave me deep insight into entering any business and understanding where all the risks are — assessing the cradle-to-grave scenario from start to finish, identifying where processes and systems are strong, where they are adequate, and where they need improving. That framework applies whether it's finance, FMCG, or any sector I walk into.</p>
         <p>That's not a CV — that's a curriculum. And it's why I now work alongside founders facing the same decisions, from the inside, not from a deck. No theories. No frameworks borrowed from McKinsey. Just hard-won, founder-grade judgement, sat next to you for as long as you need it.</p>
         <div class="founder-sig">
           <div class="founder-sig-name">Tahzeen "Taz" Basunia, FCA</div>
@@ -839,19 +906,34 @@
     <div class="contact-panel-badge cp-advisory">Founder Advisory</div>
     <h3>Start a founder conversation.</h3>
     <p>An initial call costs nothing but an hour. If we're a fit, we'll know. If we're not, you'll leave with at least one useful idea.</p>
-    <a href="mailto:t.basunia@btinternet.com" class="contact-link"><span>Email</span> t.basunia@btinternet.com</a>
+    <a href="mailto:Taz@thbasunia.com" class="contact-link"><span>Email</span> Taz@thbasunia.com</a>
     <a href="tel:07980449252" class="contact-link"><span>Phone</span> 07980 449252</a>
     <a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener" class="linkedin-btn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</a>
-    <a href="mailto:t.basunia@btinternet.com?subject=Founder Advisory Enquiry" class="contact-cta cta-advisory">Get in Touch →</a>
+    <a href="mailto:Taz@thbasunia.com?subject=Founder Advisory Enquiry" class="contact-cta cta-advisory">Get in Touch →</a>
   </div>
   <div class="contact-panel">
     <div class="contact-panel-badge cp-accountancy">Accountancy</div>
     <h3>Get your numbers sorted.</h3>
     <p>Whether it's your first year or you're outgrowing your current accountant, we're happy to have a no-obligation chat about what you need.</p>
-    <a href="mailto:t.basunia@btinternet.com" class="contact-link"><span>Email</span> t.basunia@btinternet.com</a>
+    <a href="mailto:Taz@thbasunia.com" class="contact-link"><span>Email</span> Taz@thbasunia.com</a>
     <a href="tel:07980449252" class="contact-link"><span>Phone</span> 07980 449252</a>
     <a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener" class="linkedin-btn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</a>
-    <a href="mailto:t.basunia@btinternet.com?subject=Accountancy Enquiry" class="contact-cta cta-accountancy">Get in Touch →</a>
+    <a href="mailto:Taz@thbasunia.com?subject=Accountancy Enquiry" class="contact-cta cta-accountancy">Get in Touch →</a>
+  </div>
+</div>
+
+<!-- BOTTOM CTA BANNER -->
+<div class="bottom-cta-banner">
+  <div class="bottom-cta-inner">
+    <div class="bottom-cta-text">
+      <div class="bottom-cta-tag">Ready to talk?</div>
+      <h2 class="bottom-cta-heading">Let's start a <em>real</em> conversation.</h2>
+      <p class="bottom-cta-sub">Whether you're a founder who needs a trusted advisor in the room, or a business that needs its numbers sorted — reach out. No obligation, no jargon.</p>
+    </div>
+    <div class="bottom-cta-actions">
+      <a href="mailto:Taz@thbasunia.com" class="bottom-cta-btn primary">Get in Touch →</a>
+      <a href="tel:07980449252" class="bottom-cta-btn secondary">Call 07980 449252</a>
+    </div>
   </div>
 </div>
 
@@ -891,7 +973,7 @@
     <div class="footer-contact-col">
       <div class="footer-contact-label">Get in Touch</div>
       <div class="footer-contact-links">
-        <a href="mailto:t.basunia@btinternet.com">t.basunia@btinternet.com</a>
+        <a href="mailto:Taz@thbasunia.com">Taz@thbasunia.com</a>
         <a href="tel:07980449252">07980 449252</a>
         <a href="https://wa.me/447980449252" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://www.linkedin.com/in/tahzeen-basunia-fca-6b961612/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1242,7 +1324,7 @@
     <div class="legal-banner-text">"We believe in plain English — always. These documents set out what you can expect from us, and what we ask in return."</div>
     <div class="legal-banner-contact">
       <span>Questions?</span>
-      <a href="mailto:t.basunia@btinternet.com">t.basunia@btinternet.com</a>
+      <a href="mailto:Taz@thbasunia.com">Taz@thbasunia.com</a>
       <a href="tel:07980449252">07980 449252</a>
     </div>
   </div>
@@ -1326,14 +1408,14 @@
 
       <div class="legal-doc-section" id="lt13"><div class="legal-section-num">Section 13</div><h2 class="legal-section-title">Changes to These Terms</h2><div class="legal-doc-body"><p>We reserve the right to update these Terms &amp; Conditions at any time. Changes will be effective immediately upon posting to this page. Your continued use of this website following any changes constitutes your acceptance of the revised terms.</p></div></div>
 
-      <div class="legal-doc-section" id="lt14"><div class="legal-section-num">Section 14</div><h2 class="legal-section-title">Contact</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Channel</th><th>Details</th></tr></thead><tbody><tr><td>Email</td><td><a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);text-decoration:none;">t.basunia@btinternet.com</a></td></tr><tr><td>Telephone</td><td><a href="tel:07980449252" style="color:var(--rust);text-decoration:none;">07980 449252</a></td></tr><tr><td>WhatsApp</td><td><a href="https://wa.me/447980449252" style="color:var(--rust);text-decoration:none;">+44 7980 449252</a></td></tr><tr><td>Location</td><td>London, United Kingdom</td></tr><tr><td>Registered name</td><td>THB Holdings Ltd</td></tr></tbody></table></div></div>
+      <div class="legal-doc-section" id="lt14"><div class="legal-section-num">Section 14</div><h2 class="legal-section-title">Contact</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Channel</th><th>Details</th></tr></thead><tbody><tr><td>Email</td><td><a href="mailto:Taz@thbasunia.com" style="color:var(--rust);text-decoration:none;">Taz@thbasunia.com</a></td></tr><tr><td>Telephone</td><td><a href="tel:07980449252" style="color:var(--rust);text-decoration:none;">07980 449252</a></td></tr><tr><td>WhatsApp</td><td><a href="https://wa.me/447980449252" style="color:var(--rust);text-decoration:none;">+44 7980 449252</a></td></tr><tr><td>Location</td><td>London, United Kingdom</td></tr><tr><td>Registered name</td><td>THB Holdings Ltd</td></tr></tbody></table></div></div>
     </div><!-- end terms panel -->
 
     <!-- ═══ PRIVACY POLICY ═══ -->
     <div class="legal-doc-panel" id="ldp-privacy">
       <div class="legal-doc-highlight">This Privacy Policy explains how TH Basunia (THB Holdings Ltd) collects, uses, and protects your personal data in compliance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</div>
 
-      <div class="legal-doc-section" id="lp1"><div class="legal-section-num">Section 01</div><h2 class="legal-section-title">Who We Are</h2><div class="legal-doc-body"><p><strong>Data Controller:</strong> THB Holdings Ltd, trading as TH Basunia, London, United Kingdom.</p><p><strong>Data Protection Contact:</strong> Tahzeen Basunia — <a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);">t.basunia@btinternet.com</a></p><p>We are committed to handling your personal data responsibly and lawfully. As a regulated accountant (ICAEW Fellow Chartered Accountant), we are also bound by professional ethical obligations regarding client confidentiality and data handling.</p></div></div>
+      <div class="legal-doc-section" id="lp1"><div class="legal-section-num">Section 01</div><h2 class="legal-section-title">Who We Are</h2><div class="legal-doc-body"><p><strong>Data Controller:</strong> THB Holdings Ltd, trading as TH Basunia, London, United Kingdom.</p><p><strong>Data Protection Contact:</strong> Tahzeen Basunia — <a href="mailto:Taz@thbasunia.com" style="color:var(--rust);">Taz@thbasunia.com</a></p><p>We are committed to handling your personal data responsibly and lawfully. As a regulated accountant (ICAEW Fellow Chartered Accountant), we are also bound by professional ethical obligations regarding client confidentiality and data handling.</p></div></div>
 
       <div class="legal-doc-section" id="lp2"><div class="legal-section-num">Section 02</div><h2 class="legal-section-title">Information We Collect</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Category</th><th>Examples</th><th>How Collected</th></tr></thead><tbody><tr><td><strong>Identity Data</strong></td><td>Name, job title, company name</td><td>Website enquiry, phone, email, chat tool</td></tr><tr><td><strong>Contact Data</strong></td><td>Email address, phone number</td><td>Website contact, email, WhatsApp</td></tr><tr><td><strong>Business Data</strong></td><td>Company revenue, sector, business stage, challenges</td><td>Qualification conversations, engagement onboarding</td></tr><tr><td><strong>Financial Data</strong></td><td>Financial records, tax information, bank details (accountancy clients)</td><td>Client onboarding and service delivery</td></tr><tr><td><strong>Communication Data</strong></td><td>Email correspondence, chat transcripts, call notes</td><td>Direct communication with us</td></tr><tr><td><strong>Technical Data</strong></td><td>IP address, browser type, pages visited</td><td>Automatic collection via website</td></tr></tbody></table><p>We do not knowingly collect personal data from individuals under the age of 18.</p></div></div>
 
@@ -1349,13 +1431,13 @@
 
       <div class="legal-doc-section" id="lp8"><div class="legal-section-num">Section 08</div><h2 class="legal-section-title">AI Chat Tool &amp; Data</h2><div class="legal-doc-body"><ul class="legal-doc-list"><li>Your chat messages are transmitted to <strong>Anthropic's API</strong> for processing in order to generate responses. Anthropic's privacy policy governs their handling of this data.</li><li>We recommend that you <strong>do not share sensitive personal data, financial account details, national insurance numbers, or other confidential information</strong> through the chat tool.</li><li>Conversation data may be reviewed by us for the purpose of improving lead qualification and service quality.</li><li>The AI chat tool is powered by a US-based company. Data transmitted through the tool may be processed outside the UK. Anthropic operates appropriate data transfer safeguards.</li></ul><p>If you prefer not to use the AI chat tool, you are welcome to contact us directly by email, phone, or WhatsApp.</p></div></div>
 
-      <div class="legal-doc-section" id="lp9"><div class="legal-section-num">Section 09</div><h2 class="legal-section-title">Your Rights</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Right</th><th>What It Means</th></tr></thead><tbody><tr><td><strong>Access</strong></td><td>To request a copy of the personal data we hold about you (subject access request).</td></tr><tr><td><strong>Rectification</strong></td><td>To ask us to correct inaccurate or incomplete personal data.</td></tr><tr><td><strong>Erasure</strong></td><td>To request deletion of your personal data where there is no legitimate reason for us to continue holding it.</td></tr><tr><td><strong>Restriction</strong></td><td>To request that we restrict the processing of your data in certain circumstances.</td></tr><tr><td><strong>Portability</strong></td><td>To receive your personal data in a structured, machine-readable format where applicable.</td></tr><tr><td><strong>Objection</strong></td><td>To object to our processing of your data where we rely on legitimate interests as our lawful basis.</td></tr><tr><td><strong>Withdraw Consent</strong></td><td>To withdraw consent at any time where processing is consent-based.</td></tr></tbody></table><p>To exercise any of these rights, please contact us at <a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);">t.basunia@btinternet.com</a>. We will respond within <strong>one calendar month</strong> in accordance with UK GDPR requirements. There is no charge for making a request.</p></div></div>
+      <div class="legal-doc-section" id="lp9"><div class="legal-section-num">Section 09</div><h2 class="legal-section-title">Your Rights</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Right</th><th>What It Means</th></tr></thead><tbody><tr><td><strong>Access</strong></td><td>To request a copy of the personal data we hold about you (subject access request).</td></tr><tr><td><strong>Rectification</strong></td><td>To ask us to correct inaccurate or incomplete personal data.</td></tr><tr><td><strong>Erasure</strong></td><td>To request deletion of your personal data where there is no legitimate reason for us to continue holding it.</td></tr><tr><td><strong>Restriction</strong></td><td>To request that we restrict the processing of your data in certain circumstances.</td></tr><tr><td><strong>Portability</strong></td><td>To receive your personal data in a structured, machine-readable format where applicable.</td></tr><tr><td><strong>Objection</strong></td><td>To object to our processing of your data where we rely on legitimate interests as our lawful basis.</td></tr><tr><td><strong>Withdraw Consent</strong></td><td>To withdraw consent at any time where processing is consent-based.</td></tr></tbody></table><p>To exercise any of these rights, please contact us at <a href="mailto:Taz@thbasunia.com" style="color:var(--rust);">Taz@thbasunia.com</a>. We will respond within <strong>one calendar month</strong> in accordance with UK GDPR requirements. There is no charge for making a request.</p></div></div>
 
       <div class="legal-doc-section" id="lp10"><div class="legal-section-num">Section 10</div><h2 class="legal-section-title">Security</h2><div class="legal-doc-body"><p>We implement appropriate technical and organisational measures to protect your data against unauthorised access, loss, destruction, or alteration. In the event of a personal data breach that poses a risk to your rights and freedoms, we will notify the Information Commissioner's Office (ICO) within 72 hours as required and will contact affected individuals where necessary.</p></div></div>
 
       <div class="legal-doc-section" id="lp11"><div class="legal-section-num">Section 11</div><h2 class="legal-section-title">Changes to This Policy</h2><div class="legal-doc-body"><p>We may update this Privacy Policy from time to time. The most current version will always be available on this website. Where changes are material, we will notify active clients directly by email before the changes take effect.</p></div></div>
 
-      <div class="legal-doc-section" id="lp12"><div class="legal-section-num">Section 12</div><h2 class="legal-section-title">Contact &amp; Complaints</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Channel</th><th>Details</th></tr></thead><tbody><tr><td>Email</td><td><a href="mailto:t.basunia@btinternet.com" style="color:var(--rust);text-decoration:none;">t.basunia@btinternet.com</a></td></tr><tr><td>Telephone</td><td><a href="tel:07980449252" style="color:var(--rust);text-decoration:none;">07980 449252</a></td></tr><tr><td>Location</td><td>London, United Kingdom</td></tr></tbody></table><p style="margin-top:1.2rem;">If you are unhappy with how we have handled your personal data, you have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong>: <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:var(--rust);">ico.org.uk</a> · Helpline: 0303 123 1113</p></div></div>
+      <div class="legal-doc-section" id="lp12"><div class="legal-section-num">Section 12</div><h2 class="legal-section-title">Contact &amp; Complaints</h2><div class="legal-doc-body"><table class="legal-doc-table"><thead><tr><th>Channel</th><th>Details</th></tr></thead><tbody><tr><td>Email</td><td><a href="mailto:Taz@thbasunia.com" style="color:var(--rust);text-decoration:none;">Taz@thbasunia.com</a></td></tr><tr><td>Telephone</td><td><a href="tel:07980449252" style="color:var(--rust);text-decoration:none;">07980 449252</a></td></tr><tr><td>Location</td><td>London, United Kingdom</td></tr></tbody></table><p style="margin-top:1.2rem;">If you are unhappy with how we have handled your personal data, you have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong>: <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:var(--rust);">ico.org.uk</a> · Helpline: 0303 123 1113</p></div></div>
     </div><!-- end privacy panel -->
 
   </div><!-- end content-wrap -->
@@ -1471,7 +1553,7 @@ QUALIFICATION FLOW:
 2. If Founder Advisory: ask about their business (what stage, what revenue range, what sector, what challenge they face right now).
 3. If Accountancy: ask if they are a sole trader, startup, or growing business; ask their approximate turnover; ask what services they currently use or need.
 4. Assess whether this is a good lead based on: sub-£5m revenue FMCG/consumer brand (Advisory), or sole trader/SME needing practical accountancy (Accountancy).
-5. If they are a good fit, tell them warmly and encourage them to reach out directly: t.basunia@btinternet.com or call 07980 449252.
+5. If they are a good fit, tell them warmly and encourage them to reach out directly: Taz@thbasunia.com or call 07980 449252.
 6. If they are not an obvious fit, still be helpful and suggest the most relevant service or resource.
 
 KEY INFORMATION ABOUT TAZ:
@@ -1548,11 +1630,11 @@ INSTRUCTIONS:
         })
       });
       const data = await response.json();
-      const reply = data.content?.[0]?.text || "Sorry, I didn't catch that — please try again or contact Taz directly at t.basunia@btinternet.com.";
+      const reply = data.content?.[0]?.text || "Sorry, I didn't catch that — please try again or contact Taz directly at Taz@thbasunia.com.";
       history.push({ role: 'assistant', content: reply });
       addBotMessage(reply);
     } catch (err) {
-      addBotMessage("Apologies, I'm having a moment! Please email Taz directly at t.basunia@btinternet.com or call 07980 449252.");
+      addBotMessage("Apologies, I'm having a moment! Please email Taz directly at Taz@thbasunia.com or call 07980 449252.");
     }
   }
 
